@@ -367,3 +367,49 @@
 @media(max-width:780px){.jt-site section.before-after-section#antes-depois{padding:52px 0!important}}
 .procedure-track{gap:0!important}.procedure-track>.procedure-card{margin-right:15px}@keyframes procedureLoop{to{transform:translateX(-50%)}}
 .clinic-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:720px}.clinic-photos img{width:100%;height:440px;object-fit:cover;border-radius:22px;display:block}@media(max-width:640px){.clinic-photos img{height:280px}}
+
+
+/* Camuflagem em destaque antes do catálogo de procedimentos */
+.jt-site .camouflage-feature{background:#f3ecdf;padding:76px 0}
+.jt-site .camouflage-feature-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:clamp(30px,5vw,68px);align-items:center}
+.jt-site .camouflage-feature-copy h2{font-size:clamp(34px,4vw,49px);line-height:1.12;margin:14px 0 20px;color:#30291f}
+.jt-site .camouflage-feature-copy>p{color:#655d50;line-height:1.8}
+.jt-site .camouflage-points{display:grid;gap:15px;margin:26px 0}
+.jt-site .camouflage-points>div{display:flex;gap:12px;align-items:flex-start}
+.jt-site .camouflage-points>div>svg{flex:none;color:#a8843e;margin-top:2px}
+.jt-site .camouflage-points span{display:grid;gap:3px}
+.jt-site .camouflage-points strong{color:#443a2b;font-size:15px}
+.jt-site .camouflage-points small{color:#716858;font-size:14px;line-height:1.55}
+.jt-site .camouflage-feature-copy .camouflage-note{font-size:13px;line-height:1.7;padding:14px 16px;border-left:3px solid #b99a55;background:rgba(255,253,249,.7);margin:24px 0}
+.jt-site .camouflage-feature-photo{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(168,132,62,.32);box-shadow:0 18px 42px rgba(75,55,30,.12);background:#e9dfcf}
+.jt-site .camouflage-feature-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.jt-site .camouflage-feature-photo span{position:absolute;left:14px;right:14px;bottom:14px;padding:12px 14px;border-radius:12px;background:rgba(255,253,249,.94);color:#80652f;text-align:center;font-size:10px;font-weight:800;letter-spacing:1.2px}
+.jt-site .procedure-card .procedure-more{display:inline-flex!important;margin-top:15px;width:100%;min-height:42px;font-size:12px}
+.jt-site .procedure-track-paused{animation-play-state:paused!important}
+.jt-site .procedure-detail-backdrop{position:fixed;inset:0;z-index:10000;background:rgba(25,21,16,.72);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:22px;overflow-y:auto}
+.jt-site .procedure-detail-panel{position:relative;width:min(1040px,100%);max-height:calc(100vh - 44px);overflow-y:auto;background:#fffdf8;border:1px solid rgba(185,154,85,.35);border-radius:24px;box-shadow:0 25px 80px rgba(0,0,0,.25);padding:clamp(20px,3vw,34px)}
+.jt-site .procedure-detail-back{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:#80652f;font-size:14px;font-weight:800;cursor:pointer;margin-bottom:22px}
+.jt-site .procedure-detail-back svg{transform:rotate(180deg)}
+.jt-site .procedure-detail-layout{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(22px,4vw,42px);align-items:start}
+.jt-site .procedure-detail-image{position:sticky;top:0;border-radius:18px;overflow:hidden;background:#f2eadc}
+.jt-site .procedure-detail-image img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.jt-site .procedure-detail-copy h2{font-size:clamp(29px,3.5vw,42px);line-height:1.12;margin:10px 0;color:#30291f}
+.jt-site .procedure-detail-copy>p{color:#655d50;font-size:15px;line-height:1.8}
+.jt-site .procedure-detail-copy h3{font-family:inherit;font-size:17px;color:#4b3d27;margin:24px 0 10px}
+.jt-site .procedure-detail-copy ul{padding-left:21px;margin:0;color:#655d50}
+.jt-site .procedure-detail-copy li{padding:0 0 9px 4px;font-size:14px;line-height:1.7}
+.jt-site .procedure-detail-alert{display:grid;gap:5px;padding:15px 17px;margin:22px 0;background:#f5efe3;border:1px solid rgba(168,132,62,.25);border-radius:14px;color:#655d50;font-size:13px;line-height:1.65}
+.jt-site .procedure-detail-alert strong{color:#80652f;font-size:14px}
+.jt-site .procedure-detail-return{display:block;margin:15px auto 0;border:0;background:transparent;color:#80652f;font-size:13px;font-weight:700;cursor:pointer}
+@media(max-width:780px){
+ .jt-site .camouflage-feature{padding:52px 0}
+ .jt-site .camouflage-feature-grid{grid-template-columns:1fr;gap:26px}
+ .jt-site .camouflage-feature-photo{max-width:560px;width:100%;margin-inline:auto}
+ .jt-site .camouflage-feature-photo img{aspect-ratio:5/4}
+ .jt-site .procedure-detail-backdrop{padding:10px;align-items:flex-start}
+ .jt-site .procedure-detail-panel{max-height:none;min-height:calc(100vh - 20px);padding:18px;border-radius:18px}
+ .jt-site .procedure-detail-layout{grid-template-columns:1fr;gap:20px}
+ .jt-site .procedure-detail-image{position:relative;max-width:440px;width:100%;margin-inline:auto}
+ .jt-site .procedure-detail-image img{aspect-ratio:16/10}
+ .jt-site .procedure-detail-copy h2{font-size:30px}
+}
