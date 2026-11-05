@@ -100,6 +100,7 @@ const faqs = [
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [selectedProcedure, setSelectedProcedure] = useState<(typeof procedures)[number] | null>(null);
   const goWhatsapp = (label: string) => window.open(WHATSAPP + "?text=" + encodeURIComponent("Olá, Juliana! Vim pelo seu site e gostaria de " + label.toLowerCase() + "."), "_blank", "noopener,noreferrer");
 
   return (
@@ -120,7 +121,25 @@ function Index() {
 
       <section className="section limine-section" id="diferenciais"><div className="container limine-grid"><div className="limine-copy"><span className="eyebrow">BELEZA COM PERSONALIDADE</span><h2>Realce o que faz você <em>única.</em></h2><p>Seu cuidado começa com uma escolha consciente. Conheça os procedimentos, entenda as possibilidades para o seu objetivo e receba orientação antes de decidir. Cada pele e cada pessoa têm necessidades diferentes — por isso, a conversa individual faz toda a diferença.</p><div className="limine-benefits"><span><Sparkles size={19}/><strong>Seu objetivo em foco</strong><small>Opções escolhidas conforme o que você procura.</small></span><span><Heart size={19}/><strong>Cuidado individual</strong><small>Orientação atenta em cada etapa.</small></span><span><Check size={19}/><strong>Escolha com confiança</strong><small>Informações claras antes de agendar.</small></span></div><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer os procedimentos disponíveis")}><MessageCircle size={18}/> Conversar com Juliana</button></div></div></section>
 
-      <section className="section procedures-section" id="procedimentos"><div className="container"><div className="section-heading center"><span className="eyebrow">SERVIÇOS</span><h2>Encontre o procedimento ideal para <em>realçar sua beleza.</em></h2><p>Conheça os serviços, confira os valores e fale com Juliana para tirar dúvidas e agendar seu atendimento.</p></div><div className="procedure-window"><div className="procedure-track">{[...procedures,...procedures].map(({title,text,price,image},i)=><article className={"procedure-card" + (image ? " has-image" : "")} key={title + i}>{image ? <img className="procedure-photo" src={image} onError={(e) => { e.currentTarget.src = "https://julianamoraes.netlify.app/foto-" + String(((i % procedures.length) + 1)).padStart(2, "0") + ".webp"; }} alt={title + " — Juliana Moraes"} loading="lazy" /> : <div className="procedure-photo procedure-photo-empty" aria-hidden="true" />}<div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">{price}</strong><p>{text}</p></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("consultar procedimentos e horários disponíveis")}><MessageCircle size={18}/> Ver opções e horários</button></div></div></section>
+      <section className="section camouflage-feature" id="camuflagem">
+        <div className="container camouflage-feature-grid">
+          <div className="camouflage-feature-copy">
+            <span className="eyebrow">ESPECIALIDADE EM DESTAQUE</span>
+            <h2>Camuflagem: mais harmonia para a aparência da <em>sua pele.</em></h2>
+            <p>A camuflagem estética é uma técnica de micropigmentação que utiliza pigmentos selecionados para aproximar visualmente a tonalidade de uma área da pele ao tom ao redor. Pode ser considerada em casos específicos de cicatrizes claras e estrias já estabilizadas, sempre após avaliação individual.</p>
+            <div className="camouflage-points">
+              <div><Check size={18}/><span><strong>Avaliação cuidadosa</strong><small>Observação da região, do tom e das características da pele.</small></span></div>
+              <div><Check size={18}/><span><strong>Escolha personalizada</strong><small>O pigmento e a técnica são definidos conforme cada caso.</small></span></div>
+              <div><Check size={18}/><span><strong>Expectativas realistas</strong><small>O objetivo é suavizar o contraste visual, não apagar completamente marcas.</small></span></div>
+            </div>
+            <p className="camouflage-note">A indicação depende de fatores como tipo de marca, tempo de cicatrização, condição da pele e histórico individual. Nem toda cicatriz ou estria pode receber camuflagem. O resultado varia e pode exigir mais de uma sessão.</p>
+            <button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre camuflagem e agendar uma avaliação")}><MessageCircle size={18}/> Quero saber sobre camuflagem</button>
+          </div>
+          <div className="camouflage-feature-photo"><img src={procedureImage("Camuflagem de cicatriz com micropigmentação.png")} alt="Procedimento de camuflagem estética de cicatriz" loading="lazy"/><span>CAMUFLAGEM ESTÉTICA • AVALIAÇÃO INDIVIDUAL</span></div>
+        </div>
+      </section>
+
+      <section className="section procedures-section" id="procedimentos"><div className="container"><div className="section-heading center"><span className="eyebrow">SERVIÇOS</span><h2>Encontre o procedimento ideal para <em>realçar sua beleza.</em></h2><p>Em cada card, toque em “Saiba mais” para conhecer os detalhes. O carrossel pausa enquanto você lê e continua ao voltar.</p></div><div className="procedure-window"><div className={"procedure-track" + (selectedProcedure ? " procedure-track-paused" : "")}>{[...procedures,...procedures].map(({title,text,price,image},i)=><article className={"procedure-card" + (image ? " has-image" : "")} key={title + i}>{image ? <img className="procedure-photo" src={image} onError={(e) => { e.currentTarget.src = "https://julianamoraes.netlify.app/foto-" + String(((i % procedures.length) + 1)).padStart(2, "0") + ".webp"; }} alt={title + " — Juliana Moraes"} loading="lazy" /> : <div className="procedure-photo procedure-photo-empty" aria-hidden="true" />}<div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">{price}</strong><p>{text}</p><button className="procedure-book procedure-more" onClick={() => setSelectedProcedure(procedures[i % procedures.length])}>Saiba mais <ArrowRight size={15}/></button></div></article>)}</div></div><div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("consultar procedimentos e horários disponíveis")}><MessageCircle size={18}/> Ver opções e horários</button></div></div></section>
 
       <section className="section before-after-section" id="antes-depois">
         <div className="container">
@@ -169,6 +188,42 @@ function Index() {
 
       <footer className="footer"><div className="container footer-grid"><div><a className="brand footer-brand brand-logo" href="#inicio"><img src={logoAsset.url} alt="Juliana Moraes Estética e Beleza" /><span>Juliana Moraes | Camuflagem | Estética | Depilação</span></a><p>Camuflagem, estética e depilação com atendimento personalizado em São João de Meriti - RJ.</p></div><div><h4>Atalhos</h4><a href="#procedimentos">Procedimentos</a><a href="#juliana">Sobre Juliana</a><a href="#como-funciona">Como funciona</a><a href="#faq">Perguntas frequentes</a><a href="#localizacao">Localização</a></div><div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> WhatsApp</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Instagram size={15}/> Instagram</a><span><MapPin size={15}/> São João de Meriti • RJ</span></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Juliana Moraes. Todos os direitos reservados.</span><span>Estética & Beleza</span></div></footer>
 
+      {selectedProcedure && (() => {
+        const title = selectedProcedure.title;
+        const isCamouflage = /camuflagem|estrias/i.test(title);
+        const isFace = /facial|limpeza|peeling|microagulhamento|dermaplaning|olheiras|labial|bb glow/i.test(title);
+        const intro = isCamouflage
+          ? "É uma técnica estética de micropigmentação que busca aproximar a cor de uma marca específica ao tom da pele ao redor, reduzindo o contraste visual. A indicação depende de avaliação presencial e das condições da região."
+          : isFace
+            ? "É um cuidado estético direcionado à pele do rosto. A técnica e os produtos utilizados devem considerar o tipo de pele, a sensibilidade, o histórico e o objetivo de cada pessoa."
+            : "É um procedimento estético realizado de forma personalizada, considerando a região a ser tratada, as características individuais e o resultado que você deseja alcançar.";
+        const points = isCamouflage
+          ? ["Pode ser avaliada para estrias claras e cicatrizes já estabilizadas, conforme suas características.", "A escolha dos pigmentos considera o subtom e a tonalidade da pele.", "A proposta é suavizar a diferença de cor; não remove a marca nem garante invisibilidade."]
+          : isFace
+            ? ["A avaliação identifica necessidades, sensibilidades e possíveis contraindicações.", "A intensidade e o protocolo são adaptados à condição da pele.", "Os cuidados antes e depois são explicados conforme a técnica escolhida."]
+            : ["A avaliação considera a região, as condições da pele e o objetivo do atendimento.", "A técnica e o planejamento são individualizados.", "As orientações de cuidados e o número de sessões dependem de cada caso."];
+        return <div className="procedure-detail-backdrop" role="presentation" onClick={() => setSelectedProcedure(null)}>
+          <section className="procedure-detail-panel" role="dialog" aria-modal="true" aria-labelledby="procedure-detail-title" onClick={(e) => e.stopPropagation()}>
+            <button className="procedure-detail-back" onClick={() => setSelectedProcedure(null)}><ArrowRight size={17}/> Voltar aos procedimentos</button>
+            <div className="procedure-detail-layout">
+              <div className="procedure-detail-image"><img src={selectedProcedure.image} alt={title}/></div>
+              <div className="procedure-detail-copy">
+                <span className="eyebrow">CONHEÇA O PROCEDIMENTO</span>
+                <h2 id="procedure-detail-title">{title}</h2>
+                <strong className="procedure-price">{selectedProcedure.price}</strong>
+                <p>{intro}</p>
+                <h3>O que você precisa saber</h3>
+                <ul>{points.map((point) => <li key={point}>{point}</li>)}</ul>
+                <h3>Como funciona o atendimento?</h3>
+                <p>O primeiro passo é conversar com Juliana e realizar uma avaliação para entender sua necessidade, verificar se o procedimento é indicado e esclarecer expectativas, valores e cuidados. Somente depois dessa etapa é definido o planejamento adequado.</p>
+                <div className="procedure-detail-alert"><strong>Importante</strong><span>Resultados variam de pessoa para pessoa. A indicação, possíveis contraindicações, número de sessões e cuidados devem ser confirmados em avaliação individual. Nenhum resultado específico é garantido.</span></div>
+                <button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + title)}><MessageCircle size={18}/> Tenho interesse neste procedimento</button>
+                <button className="procedure-detail-return" onClick={() => setSelectedProcedure(null)}>← Voltar e continuar vendo os procedimentos</button>
+              </div>
+            </div>
+          </section>
+        </div>;
+      })()}
       <a className="floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp"><img src={whatsappAsset.url} alt="" /></a>
     </main>
   );
