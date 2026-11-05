@@ -190,34 +190,178 @@ function Index() {
 
       {selectedProcedure && (() => {
         const title = selectedProcedure.title;
-        const isCamouflage = /camuflagem|estrias/i.test(title);
-        const isFace = /facial|limpeza|peeling|microagulhamento|dermaplaning|olheiras|labial|bb glow/i.test(title);
-        const intro = isCamouflage
-          ? "É uma técnica estética de micropigmentação que busca aproximar a cor de uma marca específica ao tom da pele ao redor, reduzindo o contraste visual. A indicação depende de avaliação presencial e das condições da região."
-          : isFace
-            ? "É um cuidado estético direcionado à pele do rosto. A técnica e os produtos utilizados devem considerar o tipo de pele, a sensibilidade, o histórico e o objetivo de cada pessoa."
-            : "É um procedimento estético realizado de forma personalizada, considerando a região a ser tratada, as características individuais e o resultado que você deseja alcançar.";
-        const points = isCamouflage
-          ? ["Pode ser avaliada para estrias claras e cicatrizes já estabilizadas, conforme suas características.", "A escolha dos pigmentos considera o subtom e a tonalidade da pele.", "A proposta é suavizar a diferença de cor; não remove a marca nem garante invisibilidade."]
-          : isFace
-            ? ["A avaliação identifica necessidades, sensibilidades e possíveis contraindicações.", "A intensidade e o protocolo são adaptados à condição da pele.", "Os cuidados antes e depois são explicados conforme a técnica escolhida."]
-            : ["A avaliação considera a região, as condições da pele e o objetivo do atendimento.", "A técnica e o planejamento são individualizados.", "As orientações de cuidados e o número de sessões dependem de cada caso."];
+        const details: Record<string, { intro: string; purpose: string; how: string; benefits: string; attention: string }> = {
+          "Micropigmentação Labial": {
+            intro: "A micropigmentação labial é um procedimento de implantação superficial de pigmentos na região dos lábios. É procurada por quem deseja realçar o contorno e trazer mais uniformidade à tonalidade, mantendo um resultado planejado de acordo com as características naturais da boca.",
+            purpose: "Valorizar o desenho dos lábios, suavizar diferenças de tonalidade e proporcionar uma aparência mais definida. A intensidade da cor é escolhida considerando o tom natural e a expectativa da cliente.",
+            how: "Após avaliação e alinhamento do formato e da cor desejados, a profissional realiza a técnica com equipamento e pigmentos próprios para micropigmentação. A tonalidade pode parecer mais intensa nos primeiros dias e passa por um processo de acomodação durante a cicatrização.",
+            benefits: "Pode contribuir para um aspecto mais uniforme e definido dos lábios e reduzir a necessidade de retoques diários com maquiagem. O resultado varia conforme a pele, os cuidados e a resposta individual ao pigmento.",
+            attention: "É necessário avaliar histórico de herpes labial, sensibilidade, condições de saúde e possíveis contraindicações. Siga as orientações de higiene e cuidados posteriores. O valor informado não inclui retoque."
+          },
+          "Camuflagem de Estrias": {
+            intro: "A camuflagem de estrias é uma técnica estética de micropigmentação que deposita pigmentos na pele para aproximar visualmente a tonalidade das estrias ao tom da região ao redor. Seu objetivo é diminuir o contraste de cor, não apagar a textura ou eliminar a estria.",
+            purpose: "Suavizar a diferença de tonalidade, principalmente em estrias claras e já estabilizadas, quando a avaliação profissional indicar que a técnica pode ser considerada.",
+            how: "A região é examinada para observar cor, textura, profundidade e condição da pele. A profissional avalia a possibilidade de atendimento e seleciona uma combinação de pigmentos. A resposta pode variar e, em alguns casos, são necessárias sessões adicionais.",
+            benefits: "Quando há indicação e boa resposta individual, pode deixar as marcas visualmente menos contrastantes. A camuflagem não remove estrias, não recupera a textura original e não garante que elas fiquem imperceptíveis.",
+            attention: "Estrias recentes, avermelhadas, irritadas, bronzeadas ou em mudança podem não ser adequadas. A pele precisa estar íntegra e a indicação deve ser confirmada presencialmente. O resultado depende da pele e da técnica."
+          },
+          "Limpeza de Pele Profunda": {
+            intro: "A limpeza de pele profunda é um cuidado estético facial voltado à higienização da pele e à remoção de impurezas e comedões (cravos), quando apropriado. O protocolo é adaptado às características e à sensibilidade de cada pele.",
+            purpose: "Auxiliar na desobstrução dos poros, retirar resíduos acumulados e melhorar a sensação de limpeza e o aspecto geral da pele. Não substitui tratamento dermatológico para acne ou outras condições.",
+            how: "Em geral, inclui higienização, etapas de preparo e emoliência, extrações quando indicadas, finalização calmante e proteção da pele. As etapas podem mudar conforme a avaliação e a tolerância individual.",
+            benefits: "Pode ajudar a reduzir cravos superficiais e deixar a pele com sensação de limpeza. A frequência ideal depende do tipo de pele e não deve ser definida sem avaliação.",
+            attention: "Peles sensibilizadas, com lesões, inflamação ou condições dermatológicas precisam de atenção especial. Evite manipular a pele em casa e siga as recomendações de proteção solar e cuidados após a sessão."
+          },
+          "Tratamento para Gordura Localizada": {
+            intro: "Tratamentos estéticos para gordura localizada reúnem técnicas que buscam atuar em áreas específicas do contorno corporal. A abordagem varia conforme o método utilizado e as características de cada pessoa.",
+            purpose: "Trabalhar a aparência do contorno em regiões selecionadas. Não é um método de emagrecimento, não substitui hábitos saudáveis e não garante redução de medidas.",
+            how: "A avaliação identifica a região, o objetivo, o histórico e as condições de saúde. Só então é possível explicar qual técnica está disponível, como ela funciona, quantas sessões podem ser consideradas e quais cuidados são necessários.",
+            benefits: "A possibilidade e a dimensão de mudanças estéticas variam conforme a técnica, a região e a resposta individual. É importante alinhar expectativas antes de iniciar.",
+            attention: "O procedimento específico e seus riscos precisam ser explicados antes da contratação. Gestação, doenças, uso de medicamentos e alterações na região podem interferir na indicação. Valor sob consulta."
+          },
+          "Drenagem Linfática Pós-Operatório": {
+            intro: "A drenagem linfática manual é uma técnica de toque leve e ritmado que estimula o deslocamento de líquidos pelos vasos linfáticos. No pós-operatório, só deve ser realizada quando liberada e orientada pela equipe responsável pela cirurgia.",
+            purpose: "Quando indicada, pode auxiliar no manejo do inchaço e proporcionar conforto durante a recuperação. Não substitui acompanhamento médico nem outras etapas do cuidado pós-cirúrgico.",
+            how: "Antes da sessão, é importante conhecer o tipo e a data da cirurgia e verificar a liberação profissional. A técnica, a pressão e as regiões trabalhadas precisam respeitar o procedimento realizado e a fase de recuperação.",
+            benefits: "O benefício esperado depende da cirurgia, do momento da recuperação e da avaliação clínica. Não se deve prometer aceleração da cicatrização ou prevenção de complicações.",
+            attention: "Não realizar sem liberação da equipe médica. Dor intensa, febre, vermelhidão crescente, falta de ar, piora súbita do inchaço ou sinais de infecção exigem contato imediato com o serviço de saúde."
+          },
+          "Design de Sobrancelhas com Henna": {
+            intro: "O design de sobrancelhas com henna combina a modelagem dos fios com a aplicação de um produto tonalizante sobre a pele e os pelos, criando um efeito de preenchimento temporário.",
+            purpose: "Definir o desenho, destacar o olhar e preencher visualmente pequenas falhas, respeitando o formato do rosto e a estrutura natural das sobrancelhas.",
+            how: "A profissional observa o crescimento dos fios, desenha o formato, realiza a limpeza e aplica a henna na tonalidade escolhida. A intensidade e a duração do efeito variam conforme pele, produto e cuidados.",
+            benefits: "É uma alternativa temporária para quem deseja sobrancelhas com aparência mais marcada sem recorrer à micropigmentação.",
+            attention: "A henna pode causar irritação ou reação alérgica. Informe sensibilidades e alergias conhecidas; teste de contato pode ser recomendado conforme o produto. Evite aplicar sobre pele lesionada."
+          },
+          "Design com Coloração": {
+            intro: "O design com coloração une a modelagem das sobrancelhas à tonalização dos fios com produto específico, para realçar a cor e dar mais definição ao desenho.",
+            purpose: "Destacar os fios, harmonizar a tonalidade e valorizar o formato das sobrancelhas sem implantar pigmento na pele.",
+            how: "A profissional avalia o desenho e a cor natural, modela os fios e aplica a coloração apropriada pelo tempo indicado pelo fabricante. O efeito é temporário e acompanha o ciclo de crescimento dos pelos.",
+            benefits: "Pode deixar os fios visualmente mais definidos e uniformes, especialmente quando são claros ou apresentam diferenças de tonalidade.",
+            attention: "Produtos de coloração podem provocar irritação ou alergia. Informe reações anteriores e não realize sobre pele sensibilizada ou lesionada. A duração depende dos fios e dos cuidados."
+          },
+          "Tratamento de Estrias (Microderme)": {
+            intro: "O tratamento chamado Microderme é apresentado como um cuidado estético para estrias com uso de ativos. A técnica e os produtos específicos precisam ser explicados e confirmados na avaliação, pois protocolos podem variar.",
+            purpose: "A proposta é cuidar da aparência e da textura da região com estrias. A resposta depende do tipo, da fase e das características das marcas e da pele.",
+            how: "A profissional avalia a região, identifica se há estrias recentes ou antigas e explica quais ativos e etapas serão utilizados, além do intervalo entre sessões e dos cuidados em casa.",
+            benefits: "Pode fazer parte de um plano estético para melhorar a aparência da pele, mas não há garantia de remoção das estrias ou de resultado igual para todas as pessoas.",
+            attention: "É importante esclarecer previamente os ativos, possíveis reações, contraindicações e cuidados com exposição solar. Não aplicar sobre pele ferida, irritada ou com infecção."
+          },
+          "Aréolas Realistas": {
+            intro: "A micropigmentação de aréolas realistas é uma técnica de pigmentação que busca criar ou redefinir visualmente a aréola e o mamilo por meio de desenho, tonalidades e efeitos de luz e sombra.",
+            purpose: "Pode ser procurada para reconstrução estética visual após cirurgias ou para harmonizar diferenças de cor e formato. A indicação depende da história clínica e da condição da pele.",
+            how: "A profissional conversa sobre expectativas, observa a região e planeja desenho e cores. A execução só deve ocorrer quando a pele estiver cicatrizada e houver liberação da equipe de saúde, quando aplicável.",
+            benefits: "A técnica pode criar uma ilusão visual de contorno e profundidade. Não reconstrói estruturas físicas, sensibilidade ou função, e o resultado varia conforme a pele e a pigmentação.",
+            attention: "Em casos pós-cirúrgicos, é indispensável liberação do cirurgião e cicatrização completa. Informe tratamentos, radioterapia, alterações na região e histórico de queloide ou reações."
+          },
+          "Camuflagem de Cicatriz": {
+            intro: "A camuflagem de cicatriz é uma técnica de micropigmentação que busca aproximar a cor de uma cicatriz ao tom da pele ao redor, reduzindo o contraste visual entre as áreas.",
+            purpose: "Suavizar visualmente cicatrizes claras e estáveis que apresentem características compatíveis com a técnica. Não elimina a cicatriz nem modifica sua estrutura.",
+            how: "A região é avaliada quanto à maturidade, textura, relevo, vascularização e tonalidade. Se houver indicação, são escolhidos pigmentos e planejada a aplicação, podendo ser necessárias etapas adicionais.",
+            benefits: "Pode diminuir a diferença de cor entre a cicatriz e a pele ao redor. A resposta varia e a cor pode mudar com o tempo, exposição solar e características individuais.",
+            attention: "Cicatrizes recentes, elevadas, queloides, inflamadas ou ainda em transformação não devem ser tratadas sem avaliação especializada. É essencial que estejam totalmente cicatrizadas e estáveis."
+          },
+          "Neutralização de Olheiras": {
+            intro: "A neutralização estética de olheiras utiliza pigmentos para tentar harmonizar visualmente a tonalidade da região abaixo dos olhos. A pele nessa área é fina e delicada, por isso a avaliação é especialmente importante.",
+            purpose: "A proposta é suavizar determinados contrastes de cor. Olheiras podem ter causas pigmentares, vasculares, estruturais ou mistas, e nem todas respondem à pigmentação.",
+            how: "A profissional avalia a tonalidade, a espessura e a condição da pele, além do histórico da cliente. A possibilidade de realizar a técnica e a escolha dos pigmentos precisam ser definidas individualmente.",
+            benefits: "Em casos selecionados, pode haver suavização visual do contraste. Não trata a causa médica das olheiras e não garante eliminação ou cobertura completa.",
+            attention: "A região dos olhos exige cautela. Irritação, alergias, doenças oculares, alterações de pele e procedimentos recentes devem ser informados. Procure avaliação médica quando houver mudança súbita ou sintomas."
+          },
+          "BB Glow": {
+            intro: "BB Glow é um procedimento estético facial divulgado para promover aparência mais uniforme e luminosa por meio da aplicação de produtos pigmentados ou séruns com técnicas superficiais. A composição e o método precisam ser esclarecidos antes da sessão.",
+            purpose: "A proposta estética é melhorar temporariamente a aparência do tom e do viço da pele. Não equivale a maquiagem permanente nem substitui tratamento dermatológico.",
+            how: "O protocolo pode envolver higienização e aplicação de produtos específicos com técnica superficial. A profissional deve informar ingredientes, equipamento, profundidade de aplicação e cuidados, pois há variações entre protocolos.",
+            benefits: "A aparência percebida depende dos produtos, da pele e da técnica. Não é possível garantir cobertura, duração ou resultado específico.",
+            attention: "Confirme a composição dos produtos, regularidade e indicação para seu tipo de pele. Pele sensibilizada, acne inflamada, alergias ou condições dermatológicas exigem avaliação antes de realizar."
+          },
+          "Cílios Tufinho": {
+            intro: "A aplicação de cílios tufinho consiste em posicionar pequenos grupos de fios artificiais junto aos cílios naturais para criar mais volume e destacar o olhar.",
+            purpose: "Personalizar o efeito dos cílios, desde um resultado discreto até um visual mais marcado, conforme o comprimento e a quantidade escolhidos.",
+            how: "A profissional higieniza e prepara a região dos olhos, seleciona os tufos e realiza a aplicação com adesivo próprio. O tempo de uso e a remoção dependem do produto e da manutenção indicada.",
+            benefits: "Permite realçar o olhar sem aplicar máscara de cílios diariamente durante o período de uso.",
+            attention: "Adesivos podem causar alergia ou irritação. Evite puxar os tufos para remover, não aplique sobre olhos irritados e procure orientação se ocorrer dor, vermelhidão intensa ou alteração visual."
+          },
+          "Estética Íntima": {
+            intro: "Estética íntima é um conjunto de cuidados estéticos voltados à região íntima externa. Como existem técnicas e objetivos diferentes, é importante identificar exatamente qual procedimento está sendo proposto antes de decidir.",
+            purpose: "O objetivo pode envolver cuidados com a aparência ou tonalidade da pele externa, sempre respeitando a anatomia, a saúde e o conforto da pessoa.",
+            how: "A conversa inicial esclarece a queixa e o método disponível. A profissional deve explicar produtos, equipamentos, etapas, limites e cuidados. Alterações de saúde precisam ser avaliadas por profissional médico.",
+            benefits: "Qualquer benefício é específico da técnica escolhida e deve ser apresentado sem promessas. A região íntima possui características próprias e requer abordagem cuidadosa.",
+            attention: "Não realizar sobre mucosas, feridas, irritações ou infecções. Gestação, amamentação, condições ginecológicas e uso de medicamentos devem ser informados. Valor sob consulta."
+          },
+          "Clareamento em Região Íntima": {
+            intro: "O clareamento estético da região íntima é um protocolo que pode utilizar cosméticos ou outras técnicas para tentar uniformizar a tonalidade da pele externa. A escolha depende da causa do escurecimento e da sensibilidade da região.",
+            purpose: "A proposta é suavizar diferenças de tonalidade na pele externa, sem alterar a cor natural de forma garantida ou permanente.",
+            how: "A avaliação identifica a região, o histórico de irritações, atrito, depilação e produtos utilizados. A profissional deve apresentar os ativos e o método, explicar o tempo esperado e orientar os cuidados.",
+            benefits: "Quando indicado, pode contribuir para uma aparência mais uniforme ao longo do protocolo. A resposta varia e pode haver necessidade de manutenção.",
+            attention: "A pele íntima é sensível. Não utilizar produtos clareadores por conta própria nem aplicar em mucosas. Ardência persistente, feridas ou coceira precisam de avaliação de saúde."
+          },
+          "Microagulhamento Facial": {
+            intro: "O microagulhamento facial utiliza um dispositivo com microagulhas para produzir microperfurações controladas na pele. É uma técnica que exige avaliação, higiene rigorosa e conhecimento sobre profundidade e indicações.",
+            purpose: "Pode ser indicado por profissionais habilitados para objetivos específicos relacionados à textura e aparência da pele, como determinadas marcas e irregularidades. A indicação depende da avaliação.",
+            how: "A pele é examinada e preparada; o profissional define o dispositivo, a profundidade e o protocolo de acordo com a região e o objetivo. Depois, são fornecidas orientações específicas para o período de recuperação.",
+            benefits: "A resposta é gradual e varia conforme a indicação, a técnica e as características individuais. Não há garantia de remoção de cicatrizes, manchas ou linhas.",
+            attention: "Infecções, acne inflamada, tendência a queloides, uso de determinados medicamentos e condições dermatológicas podem contraindicar o procedimento. Proteção solar e cuidados posteriores são fundamentais."
+          },
+          "Dermaplaning + Revitalização": {
+            intro: "Dermaplaning é uma técnica de esfoliação física superficial realizada com instrumento apropriado para remover células mortas e pelos finos da superfície da pele. A revitalização é uma etapa complementar cujo produto deve ser informado.",
+            purpose: "Melhorar temporariamente a sensação de suavidade e a aparência da superfície cutânea, favorecendo um aspecto mais uniforme e luminoso.",
+            how: "Após higienização e avaliação, a profissional realiza movimentos controlados na superfície da pele e finaliza com produtos adequados ao protocolo e ao tipo de pele.",
+            benefits: "Pode deixar a pele mais lisa ao toque e remover penugem superficial. Não altera a raiz dos pelos e não trata, por si só, manchas ou doenças de pele.",
+            attention: "Não é indicado sobre acne inflamada, feridas, irritações ou infecções. Informe uso de ácidos, retinoides e tratamentos recentes. Siga as orientações de hidratação e proteção solar."
+          },
+          "Peeling Químico": {
+            intro: "O peeling químico utiliza substâncias específicas para promover esfoliação em diferentes níveis da pele. O tipo de ácido, concentração e profundidade definem a intensidade e os cuidados necessários.",
+            purpose: "Conforme a avaliação, pode ser utilizado para tratar questões estéticas como textura irregular, manchas superficiais e sinais de fotoenvelhecimento. Cada indicação exige um protocolo próprio.",
+            how: "A profissional avalia a pele e seleciona o produto adequado, explica a sensação esperada, o tempo de ação e o processo de recuperação. A descamação pode variar conforme o tipo de peeling.",
+            benefits: "Pode melhorar gradualmente alguns aspectos da textura e tonalidade, mas resultados dependem da substância, da indicação e da resposta individual.",
+            attention: "Há risco de irritação, queimadura e alteração de pigmentação se o peeling for inadequado. Informe medicamentos, exposição solar, gestação, herpes e tratamentos prévios. Proteção solar é indispensável."
+          },
+          "Depilação com Cera Hidrossolúvel": {
+            intro: "A depilação com cera hidrossolúvel remove os pelos pela raiz utilizando uma cera cuja remoção de resíduos pode ser feita com água, conforme a formulação do produto.",
+            purpose: "Retirar os pelos da região escolhida e proporcionar uma pele temporariamente lisa. O crescimento volta a ocorrer conforme o ciclo natural dos fios.",
+            how: "A região é higienizada e preparada; a cera é aplicada e retirada com técnica adequada ao sentido dos pelos e à área tratada. A profissional orienta os cuidados após a depilação.",
+            benefits: "A remoção pela raiz costuma manter a região sem pelos por mais tempo do que o corte superficial, mas a duração varia de pessoa para pessoa.",
+            attention: "Pode ocorrer vermelhidão, sensibilidade ou pelo encravado. Não aplicar sobre pele ferida, queimada, irritada ou com infecção. Informe uso de ácidos, retinoides e medicamentos que sensibilizam a pele."
+          },
+          "Remoção de Tatuagem a Laser": {
+            intro: "A remoção de tatuagem a laser utiliza pulsos de luz que atingem partículas de pigmento na pele. O organismo elimina gradualmente parte dessas partículas ao longo do tempo, entre as sessões.",
+            purpose: "Clarear progressivamente uma tatuagem ou, em alguns casos, possibilitar remoção parcial ou mais ampla. O resultado depende de tinta, cores, profundidade, localização e resposta individual.",
+            how: "A avaliação observa a tatuagem, o tipo de pigmento e a pele. São planejadas sessões espaçadas para permitir recuperação. A sensação durante a aplicação e os cuidados posteriores são explicados antes do início.",
+            benefits: "Pode reduzir a intensidade da tatuagem gradualmente. Algumas cores respondem de forma diferente e pode permanecer pigmento residual ou alteração de textura e tonalidade.",
+            attention: "Não existe garantia de remoção completa. Há riscos de bolhas, queimaduras, cicatrizes e alterações de pigmentação. É essencial confirmar equipamento, habilitação, proteção ocular e cuidados pós-sessão."
+          },
+          "Brow Lamination": {
+            intro: "Brow lamination é uma técnica de alinhamento dos fios das sobrancelhas com produtos específicos, que modifica temporariamente sua direção para criar um efeito mais organizado e preenchido.",
+            purpose: "Dar aparência de fios alinhados, mais levantados e com maior destaque, aproveitando o volume natural da sobrancelha.",
+            how: "Os fios são limpos, posicionados no formato desejado e tratados com produtos próprios, seguindo o tempo de ação indicado. A finalização pode incluir hidratação e ajuste do desenho.",
+            benefits: "Ajuda a manter os fios direcionados e pode criar impressão de sobrancelhas mais cheias. O efeito é temporário e acompanha o crescimento e a renovação dos fios.",
+            attention: "Produtos podem irritar a pele ou causar reação alérgica. Informe sensibilidades, evite realizar sobre pele lesionada e siga as orientações para não molhar ou friccionar a região no período indicado."
+          }
+        };
+        const info = details[title] || {
+          intro: selectedProcedure.text,
+          purpose: "A finalidade e os resultados esperados dependem da técnica específica e das características de cada pessoa.",
+          how: "Na avaliação, Juliana explica as etapas, os produtos ou equipamentos utilizados, a duração aproximada e o planejamento indicado para o seu caso.",
+          benefits: "As possibilidades e os limites do procedimento são esclarecidos individualmente, sem promessa de resultado igual para todas as pessoas.",
+          attention: "Informe seu histórico de saúde, alergias, medicamentos e procedimentos recentes. A indicação e os cuidados devem ser confirmados antes de iniciar."
+        };
         return <div className="procedure-detail-backdrop" role="presentation" onClick={() => setSelectedProcedure(null)}>
           <section className="procedure-detail-panel" role="dialog" aria-modal="true" aria-labelledby="procedure-detail-title" onClick={(e) => e.stopPropagation()}>
-            <button className="procedure-detail-back" onClick={() => setSelectedProcedure(null)}><ArrowRight size={17}/> Voltar aos procedimentos</button>
+            <button className="procedure-detail-back" onClick={() => setSelectedProcedure(null)}>← Voltar aos procedimentos</button>
             <div className="procedure-detail-layout">
               <div className="procedure-detail-image"><img src={selectedProcedure.image} alt={title}/></div>
               <div className="procedure-detail-copy">
-                <span className="eyebrow">CONHEÇA O PROCEDIMENTO</span>
+                <span className="eyebrow">GUIA DO PROCEDIMENTO</span>
                 <h2 id="procedure-detail-title">{title}</h2>
                 <strong className="procedure-price">{selectedProcedure.price}</strong>
-                <p>{intro}</p>
-                <h3>O que você precisa saber</h3>
-                <ul>{points.map((point) => <li key={point}>{point}</li>)}</ul>
-                <h3>Como funciona o atendimento?</h3>
-                <p>O primeiro passo é conversar com Juliana e realizar uma avaliação para entender sua necessidade, verificar se o procedimento é indicado e esclarecer expectativas, valores e cuidados. Somente depois dessa etapa é definido o planejamento adequado.</p>
-                <div className="procedure-detail-alert"><strong>Importante</strong><span>Resultados variam de pessoa para pessoa. A indicação, possíveis contraindicações, número de sessões e cuidados devem ser confirmados em avaliação individual. Nenhum resultado específico é garantido.</span></div>
-                <button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + title)}><MessageCircle size={18}/> Tenho interesse neste procedimento</button>
+                <section><h3>O que é?</h3><p>{info.intro}</p></section>
+                <section><h3>Qual é o objetivo?</h3><p>{info.purpose}</p></section>
+                <section><h3>Como é realizado?</h3><p>{info.how}</p></section>
+                <section><h3>Quais resultados podem ser esperados?</h3><p>{info.benefits}</p></section>
+                <section><h3>Cuidados e informações importantes</h3><p>{info.attention}</p></section>
+                <div className="procedure-detail-alert"><strong>Avaliação individual</strong><span>As informações são gerais e não substituem avaliação profissional. A indicação, contraindicações, número de sessões, valores finais e cuidados devem ser confirmados diretamente com Juliana antes do agendamento.</span></div>
+                <button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + title)}>Tenho interesse neste procedimento <MessageCircle size={18}/></button>
                 <button className="procedure-detail-return" onClick={() => setSelectedProcedure(null)}>← Voltar e continuar vendo os procedimentos</button>
               </div>
             </div>
