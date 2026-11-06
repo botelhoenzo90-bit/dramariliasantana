@@ -484,3 +484,36 @@
 .jt-site .camouflage-feature-photo img{aspect-ratio:16/9!important}
 .jt-site .camouflage-feature-photo span{display:none!important}
 @media(max-width:700px){.jt-site .camouflage-feature-photo{width:100%!important}.jt-site .camouflage-feature-photo img{aspect-ratio:4/3!important}}
+
+
+/* Detalhes dos procedimentos: leitura mais simples, objetiva e organizada */
+.jt-site .procedure-detail-panel{width:min(900px,100%);padding:clamp(20px,3vw,32px)}
+.jt-site .procedure-detail-back{margin:0 0 16px;color:#8b6d32}
+.jt-site .procedure-detail-layout{display:grid!important;grid-template-columns:minmax(220px,.78fr) minmax(0,1.22fr)!important;gap:clamp(22px,3vw,34px)!important;align-items:start!important;text-align:left!important}
+.jt-site .procedure-detail-image{width:100%!important;max-width:none!important;align-self:start;border-radius:18px}
+.jt-site .procedure-detail-image img{width:100%;aspect-ratio:4/5!important;object-fit:cover}
+.jt-site .procedure-detail-copy{width:100%!important;max-width:none!important;align-items:stretch!important;text-align:left!important}
+.jt-site .procedure-detail-copy>.eyebrow{font-size:10px;letter-spacing:1.5px}
+.jt-site .procedure-detail-copy h2{font-size:clamp(27px,3vw,36px);margin:7px 0 5px;text-align:left}
+.jt-site .procedure-detail-copy>.procedure-price{margin:0 0 12px!important;text-align:left}
+.jt-site .procedure-detail-intro{font-size:14px!important;line-height:1.7!important;color:#655d50;margin:0 0 16px!important;text-align:left!important}
+.jt-site .procedure-detail-summary{display:grid;gap:10px;width:100%;margin:0 0 14px}
+.jt-site .procedure-detail-summary>section{display:grid!important;grid-template-columns:28px minmax(0,1fr);gap:10px!important;align-items:start!important;padding:13px 14px;margin:0!important;border:1px solid rgba(168,132,62,.17);border-radius:13px;background:#faf6ee;text-align:left!important}
+.jt-site .procedure-detail-summary>section>span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#eee2c9;color:#87672d;font-size:10px;font-weight:800}
+.jt-site .procedure-detail-summary>section h3{font-size:13px!important;margin:0 0 4px!important;color:#443722;text-align:left!important}
+.jt-site .procedure-detail-summary>section p{font-size:12px!important;line-height:1.6!important;margin:0!important;color:#6b6255;text-align:left!important}
+.jt-site .procedure-detail-copy .procedure-detail-alert{width:100%;padding:11px 13px;margin:0 0 14px;text-align:left!important;border-radius:12px;font-size:11px;line-height:1.55}
+.jt-site .procedure-detail-copy .procedure-detail-alert strong{font-size:12px}
+.jt-site .procedure-detail-copy>.btn{align-self:stretch!important;justify-content:center;min-height:46px}
+@media(max-width:780px){
+ .jt-site .procedure-detail-backdrop{padding:9px;align-items:flex-start}
+ .jt-site .procedure-detail-panel{width:100%;max-height:none;min-height:calc(100vh - 18px);padding:15px;border-radius:16px}
+ .jt-site .procedure-detail-layout{grid-template-columns:1fr!important;gap:15px!important}
+ .jt-site .procedure-detail-image{width:min(100%,340px)!important;margin:0 auto!important}
+ .jt-site .procedure-detail-image img{aspect-ratio:16/9!important}
+ .jt-site .procedure-detail-copy h2{font-size:27px}
+ .jt-site .procedure-detail-summary{gap:8px}
+ .jt-site .procedure-detail-summary>section{padding:11px 12px}
+ .jt-site .procedure-detail-summary>section p{font-size:12px!important}
+ .jt-site .procedure-detail-back{margin-bottom:12px}
+}
