@@ -517,3 +517,21 @@
  .jt-site .procedure-detail-summary>section p{font-size:12px!important}
  .jt-site .procedure-detail-back{margin-bottom:12px}
 }
+
+
+/* Alinhamento central dos textos nos cards de procedimentos */
+.jt-site .procedure-card .procedure-content h3,
+.jt-site .procedure-card .procedure-content .procedure-price,
+.jt-site .procedure-card .procedure-content p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.jt-site .procedure-card .procedure-content h3 {
+  width: 100%;
+  justify-content: center !important;
+}
+.jt-site .procedure-card .procedure-content .procedure-price,
+.jt-site .procedure-card .procedure-content p {
+  width: 100%;
+}
