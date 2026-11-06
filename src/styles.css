@@ -477,3 +477,10 @@
 .jt-site .camouflage-feature-grid>.camouflage-note{max-width:790px;margin:0!important;padding:14px 20px;border:1px solid rgba(168,132,62,.2);border-radius:14px;background:rgba(255,253,248,.55);color:#716858;font-size:13px;line-height:1.7;text-align:center}
 .jt-site .camouflage-feature-grid>.btn{margin-top:0}
 @media(max-width:700px){.jt-site .camouflage-feature{padding:58px 0!important}.jt-site .camouflage-feature-grid{width:calc(100% - 32px)!important;gap:21px!important}.jt-site .camouflage-feature-copy h2{font-size:clamp(30px,8vw,39px)!important}.jt-site .camouflage-feature-copy>p{font-size:14px}.jt-site .camouflage-feature-photo{border-width:5px!important;border-radius:20px!important}.jt-site .camouflage-feature-photo img{aspect-ratio:4/3!important}.jt-site .camouflage-feature-bottom{grid-template-columns:1fr;gap:12px}.jt-site .camouflage-feature-bottom>div{padding:20px 18px}.jt-site .camouflage-feature-grid>.camouflage-note{font-size:12px}}
+
+
+/* Imagem da especialidade em destaque um pouco maior, sem legenda */
+.jt-site .camouflage-feature-photo{width:min(100%,760px)!important}
+.jt-site .camouflage-feature-photo img{aspect-ratio:16/9!important}
+.jt-site .camouflage-feature-photo span{display:none!important}
+@media(max-width:700px){.jt-site .camouflage-feature-photo{width:100%!important}.jt-site .camouflage-feature-photo img{aspect-ratio:4/3!important}}
