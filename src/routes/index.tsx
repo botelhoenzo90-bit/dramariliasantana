@@ -130,14 +130,12 @@ function Index() {
           </div>
           <div className="camouflage-feature-photo">
             <img src={procedureImage("Camuflagem de cicatriz com micropigmentação.png")} alt="Detalhe de procedimento de camuflagem estética" loading="lazy"/>
-            <span>DETALHES DA TÉCNICA • CUIDADO INDIVIDUAL</span>
           </div>
           <div className="camouflage-feature-bottom">
             <div><span className="camouflage-feature-icon"><Check size={20}/></span><strong>Avaliação da pele</strong><p>Análise da região, da tonalidade, da textura e das condições da marca antes de indicar o procedimento.</p></div>
             <div><span className="camouflage-feature-icon"><Sparkles size={20}/></span><strong>Pigmentação personalizada</strong><p>Seleção de pigmentos e abordagem conforme as características de cada pele.</p></div>
             <div><span className="camouflage-feature-icon"><Heart size={20}/></span><strong>Expectativas alinhadas</strong><p>O objetivo é suavizar o contraste visual. A técnica não apaga totalmente marcas nem altera sua textura.</p></div>
           </div>
-          <p className="camouflage-note">Nem toda estria ou cicatriz pode receber camuflagem. A indicação depende da avaliação, do tempo de estabilização da marca e das condições da pele. Os resultados variam de pessoa para pessoa.</p>
           <button className="btn btn-primary" onClick={() => goWhatsapp("conversar sobre camuflagem estética e agendar uma avaliação")}><MessageCircle size={18}/> Consultar sobre camuflagem</button>
         </div>
       </section>
