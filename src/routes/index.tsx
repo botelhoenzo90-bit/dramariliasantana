@@ -356,14 +356,14 @@ function Index() {
                 <span className="eyebrow">GUIA DO PROCEDIMENTO</span>
                 <h2 id="procedure-detail-title">{title}</h2>
                 <strong className="procedure-price">{selectedProcedure.price}</strong>
-                <section><h3>O que é?</h3><p>{info.intro}</p></section>
-                <section><h3>Qual é o objetivo?</h3><p>{info.purpose}</p></section>
-                <section><h3>Como é realizado?</h3><p>{info.how}</p></section>
-                <section><h3>Quais resultados podem ser esperados?</h3><p>{info.benefits}</p></section>
-                <section><h3>Cuidados e informações importantes</h3><p>{info.attention}</p></section>
-                <div className="procedure-detail-alert"><strong>Avaliação individual</strong><span>As informações são gerais e não substituem avaliação profissional. A indicação, contraindicações, número de sessões, valores finais e cuidados devem ser confirmados diretamente com Juliana antes do agendamento.</span></div>
-                <button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + title)}>Tenho interesse neste procedimento <MessageCircle size={18}/></button>
-                <button className="procedure-detail-return" onClick={() => setSelectedProcedure(null)}>← Voltar e continuar vendo os procedimentos</button>
+                <p className="procedure-detail-intro">{info.intro}</p>
+                <div className="procedure-detail-summary">
+                  <section><span>01</span><div><h3>Indicação e objetivo</h3><p>{info.purpose}</p></div></section>
+                  <section><span>02</span><div><h3>Como funciona</h3><p>{info.how}</p></div></section>
+                  <section><span>03</span><div><h3>Resultados e cuidados</h3><p>{info.benefits} {info.attention}</p></div></section>
+                </div>
+                <div className="procedure-detail-alert"><strong>Orientação individual</strong><span>A indicação, os cuidados e os resultados possíveis são confirmados em avaliação com Juliana.</span></div>
+                <button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + title)}>Quero saber mais <MessageCircle size={18}/></button>
               </div>
             </div>
           </section>
