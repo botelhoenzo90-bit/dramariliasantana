@@ -7,8 +7,9 @@ import portraitAsset from "@/assets/marilia-santana-retrato.png.asset.json";
 import clinicVideo from "@/assets/marilia-clinica.mp4.asset.json";
 import clinicPoster from "@/assets/marilia-clinica-capa.jpg.asset.json";
 import fullFaceAsset from "@/assets/marilia-full-face.png.asset.json";
-import rejuvenescimentoAsset from "@/assets/marilia-rejuvenescimento.png.asset.json";
-import botoxAsset from "@/assets/marilia-botox.png.asset.json";
+import rejuvenescimentoAsset from "@/assets/marilia-rejuvenescimento-final.png.asset.json";
+import botoxAsset from "@/assets/marilia-botox-final.png.asset.json";
+import flacidezAsset from "@/assets/marilia-flacidez.png.asset.json";
 import preenchimentoAsset from "@/assets/marilia-preenchimento.png.asset.json";
 import bioestimuladorAsset from "@/assets/marilia-bioestimulador.png.asset.json";
 import fiosAsset from "@/assets/marilia-fios.png.asset.json";
@@ -43,7 +44,7 @@ const procedures = [
   { title: "Bioestimuladores de Colágeno", text: "Protocolos voltados ao estímulo de colágeno e à melhora gradual da firmeza, conforme avaliação individual.", image: bioestimuladorAsset.url },
   { title: "Fios de Colágeno", text: "Cuidado complementar dentro de um plano individualizado para trabalhar a qualidade e a aparência da pele.", image: fiosAsset.url },
   { title: "Peelings e Qualidade da Pele", text: "Tratamentos escolhidos conforme as características da pele e os objetivos de textura, viço e uniformidade.", image: peelingsAsset.url },
-  { title: "Tratamentos para Flacidez", text: "Estratégias personalizadas para cuidar da firmeza facial e dos sinais do envelhecimento.", image: null },
+  { title: "Tratamentos para Flacidez", text: "Estratégias personalizadas para cuidar da firmeza facial e dos sinais do envelhecimento.", image: flacidezAsset.url },
 ];
 
 const faqs = [
