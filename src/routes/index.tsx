@@ -66,6 +66,7 @@ function Index() {
         <div className="container hero-grid">
           <div className="hero-copy center-hero">
             
+            <div className="hero-logo marilia-logo"><img src={logoAsset.url} alt="Marília Santana — Harmonização Full Face" width={300} height={273}/></div>
             <span className="eyebrow">REJUVENESCIMENTO • HARMONIZAÇÃO FULL FACE</span>
             <h1>Realce sua beleza com <em>naturalidade, equilíbrio e elegância.</em></h1>
             <p className="hero-lead">Uma abordagem personalizada de rejuvenescimento facial para mulheres que desejam cuidar de si, valorizar seus traços e preservar aquilo que torna cada rosto único.</p>
