@@ -722,3 +722,20 @@
   .marilia-site .footer-marilia-logo { margin-inline: auto; object-position: center; }
   .marilia-site .footer-brand { text-align: center; }
 }
+
+
+/* Carrossel infinito de avaliações — demonstrações explicitamente fictícias */
+.marilia-site .review-marquee{width:100%;overflow:hidden;padding:8px 0 18px}
+.marilia-site .review-marquee-track{display:flex;width:max-content;animation:marilia-review-loop 48s linear infinite;will-change:transform}
+.marilia-site .review-marquee-group{display:flex;gap:18px;padding-right:18px}
+.marilia-site .review-card{flex:0 0 340px;width:340px;min-height:290px;padding:28px 26px;background:#fff;border:1px solid #eee5d5;border-radius:18px;box-shadow:0 14px 34px rgba(69,54,31,.08);display:flex;flex-direction:column;align-items:flex-start}
+.marilia-site .review-card .review-stars{color:#bd9448;letter-spacing:4px;font-size:20px;margin:0 0 18px}
+.marilia-site .review-card p{flex:1;margin:0 0 24px;color:#5f594f;font-size:14px;line-height:1.85}
+.marilia-site .review-author{display:flex;flex-direction:column;gap:5px;border-top:1px solid #eee7db;padding-top:15px;width:100%}
+.marilia-site .review-author strong{font-family:Georgia,serif;font-size:17px;font-weight:400;color:#51432b}
+.marilia-site .review-author span{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#a17b3c}
+.marilia-site .reviews-note{max-width:850px;padding:12px 18px;border:1px solid #e6d7bb;border-radius:12px;background:#fffaf0;color:#75664d}
+@keyframes marilia-review-loop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marilia-site .review-marquee:hover .review-marquee-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.marilia-site .review-marquee-track{animation:none;transform:none}.marilia-site .review-marquee-group:nth-child(2){display:none}}
+@media(max-width:760px){.marilia-site .review-card{flex-basis:min(82vw,320px);width:min(82vw,320px);min-height:310px;padding:24px 22px}.marilia-site .review-marquee-track{animation-duration:38s}}
