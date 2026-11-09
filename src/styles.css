@@ -759,3 +759,15 @@
 .marilia-site .review-author-copy>span{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#a17b3c}
 .marilia-site .review-marquee:hover .review-marquee-track{animation-play-state:running!important}
 @media(max-width:760px){.marilia-site .marilia-reviews>.container{padding:0}.marilia-site .review-marquee{margin-left:calc(50% - 50vw)}}
+
+
+/* Estrelas perfeitamente centralizadas no topo de cada depoimento */
+.marilia-site .review-card .review-stars {
+  display: block !important;
+  align-self: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: #e2b52f !important;
+}
