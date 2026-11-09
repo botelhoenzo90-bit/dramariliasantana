@@ -602,3 +602,30 @@
  .marilia-site .face-lift-orbit strong{font-size:31px}
  .marilia-site .clinic-video-frame strong{font-size:19px}
 }
+
+
+/* Cards de procedimentos: imagens ocupam toda a área, sem bordas vazias */
+.marilia-site .procedure-card {
+  overflow: hidden !important;
+}
+.marilia-site .procedure-card .procedure-photo {
+  display: block !important;
+  width: 100% !important;
+  height: 230px !important;
+  min-height: 230px !important;
+  max-height: 230px !important;
+  flex: 0 0 230px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #eee6d8 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+@media (max-width: 640px) {
+  .marilia-site .procedure-card .procedure-photo {
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    flex-basis: 220px !important;
+  }
+}
