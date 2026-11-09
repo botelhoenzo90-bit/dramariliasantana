@@ -884,3 +884,245 @@
   .marilia-site .review-card p{font-size:14px;line-height:1.7}
   .marilia-site .review-marquee-group{gap:14px;padding-right:14px}
 }
+
+
+/* Sistema de espaçamento e alinhamento global — Dra. Marília Santana */
+.marilia-site .container{
+  width:min(1120px,calc(100% - 64px));
+  margin-inline:auto;
+}
+.marilia-site .hero{
+  padding:68px 0 72px;
+}
+.marilia-site .hero-copy.center-hero{
+  width:100%;
+  max-width:900px;
+}
+.marilia-site .hero-logo.marilia-logo{
+  margin-bottom:26px!important;
+}
+.marilia-site .hero h1{
+  max-width:880px;
+  margin:18px auto 22px;
+  line-height:1.08;
+}
+.marilia-site .hero-lead{
+  max-width:720px;
+  margin:0 auto 28px;
+}
+.marilia-site .hero-actions{gap:14px}
+.marilia-site .hero-trust{margin-top:22px;gap:28px}
+.marilia-site .section:not(.marilia-reviews){
+  padding:78px 0;
+}
+.marilia-site .section-heading{
+  width:min(100%,800px);
+  margin:0 auto 42px;
+}
+.marilia-site .section-heading h2,
+.marilia-site .reviews-heading h2{
+  max-width:780px;
+  margin:14px auto 18px;
+  line-height:1.12;
+}
+.marilia-site .section-heading p{
+  max-width:700px;
+  margin-inline:auto;
+}
+.marilia-site .section-action{margin-top:32px}
+.marilia-site .intro-grid,
+.marilia-site .clinic-video-grid,
+.marilia-site .location-grid{
+  align-items:center;
+  column-gap:64px;
+  row-gap:42px;
+}
+.marilia-site .intro-grid{
+  grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);
+}
+.marilia-site .intro-photo.marilia-portrait{
+  width:100%;
+  max-width:390px;
+  margin-inline:auto;
+}
+.marilia-site .intro-copy h2,
+.marilia-site .clinic-video-copy h2,
+.marilia-site .location-copy h2,
+.marilia-site .faq-intro h2{
+  margin:14px 0 20px;
+  line-height:1.12;
+}
+.marilia-site .intro-copy>p,
+.marilia-site .clinic-video-copy>p,
+.marilia-site .location-copy>p,
+.marilia-site .faq-intro>p{
+  margin:0 0 18px;
+  line-height:1.8;
+}
+.marilia-site .intro-copy>.btn{margin-top:8px}
+.marilia-site .marilia-instagram{
+  margin-top:26px;
+  padding-top:22px;
+}
+.marilia-site .pain-section .container{
+  max-width:820px;
+}
+.marilia-site .pain-section h2{margin:16px auto 20px}
+.marilia-site .pain-section .container>p{
+  max-width:720px;
+  margin:0 auto 24px;
+  line-height:1.85;
+}
+.marilia-site .centered-list{
+  width:min(100%,620px);
+  margin:0 auto 28px;
+  gap:13px;
+  text-align:left;
+}
+.marilia-site .face-lift-section .camouflage-feature-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  align-items:center;
+  gap:28px 58px;
+}
+.marilia-site .camouflage-feature-copy h2{margin:15px 0 18px;line-height:1.12}
+.marilia-site .camouflage-feature-copy p{margin:0;line-height:1.8}
+.marilia-site .camouflage-feature-bottom{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+.marilia-site .camouflage-feature-bottom>div{
+  padding:20px 22px;
+  border-radius:16px;
+}
+.marilia-site .camouflage-feature-grid>.btn{justify-self:start}
+.marilia-site .procedure-window{margin-top:2px;margin-bottom:4px}
+.marilia-site .benefit-grid{gap:18px}
+.marilia-site .benefit-grid article{padding:28px 20px}
+.marilia-site .clinic-video-grid{grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr)}
+.marilia-site .clinic-video-copy{max-width:480px}
+.marilia-site .marilia-clinic-video{width:min(100%,390px);justify-self:center}
+.marilia-site .marilia-reviews{padding:78px 0 76px}
+.marilia-site .marilia-reviews .reviews-heading{margin-bottom:38px}
+.marilia-site .marilia-reviews .section-action{margin-top:30px}
+.marilia-site .faq-layout{
+  grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);
+  gap:64px;
+  align-items:start;
+}
+.marilia-site .faq-intro{position:sticky;top:32px}
+.marilia-site .faq-list{gap:12px}
+.marilia-site .faq-item button{padding:20px 22px;line-height:1.5}
+.marilia-site .faq-answer{padding:0 22px 20px}
+.marilia-site .location-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+.marilia-site .map-card{height:420px}
+.marilia-site .address{padding:18px;gap:14px}
+.marilia-site .location-info{gap:12px;margin:14px 0 22px}
+.marilia-site .location-info>div{padding:14px;align-items:center}
+.marilia-site .location-actions{gap:12px}
+.marilia-site .final-cta{padding:76px 0}
+.marilia-site .final-cta .container{max-width:900px}
+.marilia-site .final-cta h2{margin:18px auto 20px;line-height:1.12}
+.marilia-site .final-cta p{margin-bottom:28px;line-height:1.8}
+.marilia-site .footer{padding:58px 0 22px}
+.marilia-site .footer-grid{gap:48px;padding-bottom:34px}
+.marilia-site .footer-bottom{gap:16px;line-height:1.6}
+
+@media(max-width:900px){
+  .marilia-site .container{width:min(100% - 44px,760px)}
+  .marilia-site .section:not(.marilia-reviews){padding:64px 0}
+  .marilia-site .intro-grid,
+  .marilia-site .clinic-video-grid,
+  .marilia-site .location-grid,
+  .marilia-site .faq-layout,
+  .marilia-site .face-lift-section .camouflage-feature-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .marilia-site .intro-copy,
+  .marilia-site .clinic-video-copy,
+  .marilia-site .location-copy,
+  .marilia-site .faq-intro,
+  .marilia-site .camouflage-feature-copy{text-align:center}
+  .marilia-site .intro-copy .eyebrow,
+  .marilia-site .clinic-video-copy .eyebrow,
+  .marilia-site .location-copy .eyebrow,
+  .marilia-site .faq-intro .eyebrow,
+  .marilia-site .camouflage-feature-copy .eyebrow{justify-content:center}
+  .marilia-site .intro-copy>.btn{margin-inline:auto}
+  .marilia-site .intro-photo.marilia-portrait{max-width:330px}
+  .marilia-site .marilia-instagram{margin-top:24px}
+  .marilia-site .camouflage-feature-grid>.btn{justify-self:center}
+  .marilia-site .clinic-video-grid{gap:28px}
+  .marilia-site .clinic-video-copy{max-width:650px;margin-inline:auto}
+  .marilia-site .faq-intro{position:static;max-width:650px;margin-inline:auto}
+  .marilia-site .location-grid{gap:30px}
+  .marilia-site .map-card{height:360px;order:2}
+  .marilia-site .location-copy{max-width:650px;margin-inline:auto}
+  .marilia-site .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .marilia-site .footer-grid{gap:30px}
+}
+@media(max-width:600px){
+  .marilia-site .container{width:calc(100% - 36px)}
+  .marilia-site .hero{padding:48px 0 52px}
+  .marilia-site .hero-logo.marilia-logo{width:min(160px,46vw);margin-bottom:20px!important}
+  .marilia-site .hero h1{font-size:clamp(38px,10vw,48px);letter-spacing:-1.2px;margin:14px auto 17px}
+  .marilia-site .hero-lead{font-size:15px;line-height:1.72;margin-bottom:22px}
+  .marilia-site .hero-actions{flex-direction:column;align-items:stretch;gap:10px;width:min(100%,360px);margin-inline:auto}
+  .marilia-site .hero-actions .btn{width:100%}
+  .marilia-site .hero-trust{gap:10px 18px;font-size:12px;margin-top:18px}
+  .marilia-site .section:not(.marilia-reviews){padding:52px 0}
+  .marilia-site .section-heading{margin-bottom:30px}
+  .marilia-site .section-heading h2,
+  .marilia-site .reviews-heading h2,
+  .marilia-site .intro-copy h2,
+  .marilia-site .clinic-video-copy h2,
+  .marilia-site .location-copy h2,
+  .marilia-site .faq-intro h2,
+  .marilia-site .camouflage-feature-copy h2{
+    font-size:clamp(30px,8vw,38px);
+    line-height:1.14;
+    letter-spacing:-.7px;
+  }
+  .marilia-site .section-heading p,
+  .marilia-site .intro-copy>p,
+  .marilia-site .clinic-video-copy>p,
+  .marilia-site .faq-intro>p,
+  .marilia-site .pain-section .container>p,
+  .marilia-site .camouflage-feature-copy p{font-size:14px;line-height:1.75}
+  .marilia-site .section-action{margin-top:25px}
+  .marilia-site .section-action .btn{width:min(100%,360px)}
+  .marilia-site .intro-grid,
+  .marilia-site .clinic-video-grid,
+  .marilia-site .location-grid,
+  .marilia-site .faq-layout,
+  .marilia-site .face-lift-section .camouflage-feature-grid{gap:26px}
+  .marilia-site .intro-photo.marilia-portrait{max-width:280px}
+  .marilia-site .marilia-instagram{padding-top:18px;margin-top:20px}
+  .marilia-site .marilia-instagram .btn{width:100%}
+  .marilia-site .centered-list{gap:11px;margin-bottom:23px}
+  .marilia-site .face-lift-section .camouflage-feature-bottom{gap:10px}
+  .marilia-site .camouflage-feature-bottom>div{padding:17px}
+  .marilia-site .benefit-grid{grid-template-columns:1fr;gap:12px}
+  .marilia-site .benefit-grid article{padding:23px 20px}
+  .marilia-site .marilia-reviews{padding:54px 0 52px}
+  .marilia-site .marilia-reviews .reviews-heading{width:calc(100% - 36px);margin-bottom:26px}
+  .marilia-site .faq-item button{padding:17px 16px;font-size:13px}
+  .marilia-site .faq-answer{padding:0 16px 17px}
+  .marilia-site .map-card{height:290px;border-width:5px;border-radius:18px}
+  .marilia-site .address{padding:15px;text-align:left}
+  .marilia-site .location-info{grid-template-columns:1fr;gap:9px}
+  .marilia-site .location-info>div{padding:13px;text-align:left}
+  .marilia-site .location-actions{flex-direction:column}
+  .marilia-site .location-actions .btn{width:100%}
+  .marilia-site .final-cta{padding:54px 0}
+  .marilia-site .final-cta h2{font-size:clamp(32px,8.5vw,40px)}
+  .marilia-site .final-cta p{font-size:14px}
+  .marilia-site .final-cta .btn{width:min(100%,360px)}
+  .marilia-site .footer{padding:42px 0 18px}
+  .marilia-site .footer-grid{grid-template-columns:1fr;gap:25px;text-align:center;padding-bottom:26px}
+  .marilia-site .footer-grid>div{align-items:center}
+  .marilia-site .footer-brand p{margin-inline:auto}
+  .marilia-site .footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:8px}
+}
