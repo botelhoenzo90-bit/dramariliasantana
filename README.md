@@ -1,26 +1,27 @@
-# Blank Slate Project
+# Dra. Marília Santana — Harmonização Facial Full Face
 
-quero um pa´gian em branco se mnenhuma inforamção
+Site institucional da Dra. Marília Santana, com apresentação do método próprio Face Lift 3D, procedimentos de rejuvenescimento facial, informações de contato e agendamento pelo WhatsApp.
 
-This project was built with [Lovable](https://lovable.dev).
+## Projeto Lovable
 
-**Live app**: https://jaquelineteixeira.lovable.app
+[Continuar no editor Lovable](https://lovable.dev/projects/c6c250e8-582e-4d00-b6f5-b16fb88fc01b)
 
-## Build with Lovable
+## Desenvolvimento
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c6c250e8-582e-4d00-b6f5-b16fb88fc01b).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requisitos: Node.js e npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/botelhoenzo90-bit/dramariliasantana.git
+cd dramariliasantana
+npm install
 npm run dev
 ```
+
+## Materiais pendentes para finalizar a identidade visual
+
+- Logomarca oficial da Dra. Marília Santana.
+- Fotos profissionais da especialista.
+- Fotos próprias dos procedimentos e resultados autorizados.
+- Vídeo de apresentação da clínica.
+- Depoimentos/avaliações reais de pacientes.
+- Cidade e estado para completar a localização no mapa.
