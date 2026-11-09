@@ -58,7 +58,6 @@ const faqs = [
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [selectedProcedure, setSelectedProcedure] = useState<(typeof procedures)[number] | null>(null);
   const goWhatsapp = (label: string) => window.open(WHATSAPP + "?text=" + encodeURIComponent("Olá, Dra. Marília! Vim pelo seu site e gostaria de " + label.toLowerCase() + "."), "_blank", "noopener,noreferrer");
 
   return (
@@ -66,7 +65,7 @@ function Index() {
       <section className="hero" id="inicio">
         <div className="container hero-grid">
           <div className="hero-copy center-hero">
-            <div className="hero-logo marilia-logo"><img src={logoAsset.url} alt="Marília Santana — Harmonização Full Face" width={300} height={273}/></div>
+            
             <span className="eyebrow">REJUVENESCIMENTO • HARMONIZAÇÃO FULL FACE</span>
             <h1>Realce sua beleza com <em>naturalidade, equilíbrio e elegância.</em></h1>
             <p className="hero-lead">Uma abordagem personalizada de rejuvenescimento facial para mulheres que desejam cuidar de si, valorizar seus traços e preservar aquilo que torna cada rosto único.</p>
@@ -142,10 +141,10 @@ function Index() {
       <section className="section procedures-section" id="procedimentos">
         <div className="container">
           <div className="section-heading center"><span className="eyebrow">PROCEDIMENTOS</span><h2>Cuidado facial em cada detalhe, com <em>planejamento.</em></h2><p>Conheça as principais possibilidades de tratamento. A indicação e a combinação de técnicas dependem sempre de avaliação individual.</p></div>
-          <div className="procedure-window"><div className={"procedure-track" + (selectedProcedure ? " procedure-track-paused" : "")}>
+          <div className="procedure-window"><div className="procedure-track">
             {[...procedures,...procedures].map(({title,text,image},i)=><article className="procedure-card has-image" key={title + i}>
               {image ? <img className="procedure-photo" src={image} alt={"Imagem ilustrativa de " + title} loading="lazy"/> : <div className="procedure-photo procedure-photo-empty" aria-hidden="true"/>}
-              <div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">Sob avaliação</strong><p>{text}</p><button className="procedure-book procedure-more" onClick={() => setSelectedProcedure(procedures[i % procedures.length] ?? null)}>Saiba mais <ArrowRight size={15}/></button></div>
+              <div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p></div>
             </article>)}
           </div></div>
           <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("consultar os procedimentos e agendar uma avaliação") }><MessageCircle size={18}/> Consultar procedimentos</button></div>
@@ -172,10 +171,17 @@ function Index() {
         </div>
       </section>
 
-      <section className="section reviews-section" id="experiencia">
-        <div className="reviews-heading"><span className="eyebrow">ATENDIMENTO INDIVIDUALIZADO</span><h2>Uma experiência construída com <em>cuidado.</em></h2><p>Cada paciente chega com uma história, características e expectativas próprias. A avaliação é o momento de escutar, orientar e construir um plano com clareza.</p></div>
-        <div className="experience-pillars"><article><Heart/><strong>Escuta atenta</strong><span>Entender suas expectativas e prioridades.</span></article><article><Sparkles/><strong>Plano personalizado</strong><span>Considerar as particularidades do seu rosto.</span></article><article><Check/><strong>Orientação clara</strong><span>Conversar sobre etapas, cuidados e possibilidades.</span></article></div>
-        <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação") }><MessageCircle size={18}/> Quero agendar</button></div>
+      <section className="section reviews-section marilia-reviews" id="avaliacoes">
+        <div className="container">
+          <div className="reviews-heading"><span className="eyebrow">AVALIAÇÕES</span><h2>O cuidado que começa com <em>confiança.</em></h2><p>Uma boa experiência é construída com escuta, transparência e atenção em cada etapa. Conheça os pilares que orientam o atendimento da Dra. Marília Santana.</p></div>
+          <div className="review-cards">
+            <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><span className="review-label">ESCUTA E ACOLHIMENTO</span><p>Suas expectativas são ouvidas com atenção para que o plano de cuidado respeite sua história, seus traços e seus objetivos.</p><strong>Atendimento individualizado</strong></article>
+            <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><span className="review-label">PLANEJAMENTO PERSONALIZADO</span><p>Cada etapa é explicada com clareza, considerando as características do seu rosto e as possibilidades indicadas para você.</p><strong>Face Lift 3D</strong></article>
+            <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><span className="review-label">NATURALIDADE E EQUILÍBRIO</span><p>O propósito é valorizar sua beleza sem apagar sua identidade, com escolhas cuidadosas e alinhadas às suas necessidades.</p><strong>Beleza com naturalidade</strong></article>
+          </div>
+          <p className="reviews-note">Os depoimentos de pacientes serão apresentados nesta área após serem recebidos e autorizados para publicação.</p>
+          <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação") }><MessageCircle size={18}/> Quero agendar</button></div>
+        </div>
       </section>
 
       <section className="section faq-section" id="faq">
@@ -199,17 +205,11 @@ function Index() {
       <section className="final-cta"><div className="final-glow"/><div className="container center"><span className="eyebrow light">SEU PRÓXIMO PASSO COMEÇA AQUI</span><h2>Cuide de você com um plano pensado para sua beleza.</h2><p>Agende uma avaliação com a Dra. Marília Santana e conheça as possibilidades do método Face Lift 3D.</p><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação") }><MessageCircle size={18}/> Quero agendar minha avaliação</button></div></section>
 
       <footer className="footer"><div className="container"><div className="footer-grid">
-        <div className="footer-brand"><div className="footer-wordmark"><strong>DRA. MARÍLIA SANTANA</strong><span>HARMONIZAÇÃO FACIAL • FULL FACE</span></div><p>Rejuvenescimento facial com naturalidade, elegância e atenção à individualidade de cada paciente.</p></div>
+        <div className="footer-brand"><img className="footer-marilia-logo" src={logoAsset.url} alt="Dra. Marília Santana — Harmonização Facial Full Face" loading="lazy"/><p>Rejuvenescimento facial com naturalidade, elegância e atenção à individualidade de cada paciente.</p></div>
         <div><h4>Navegação</h4><a href="#inicio">Início</a><a href="#face-lift-3d">Face Lift 3D</a><a href="#procedimentos">Procedimentos</a><a href="#video-clinica">Conheça a clínica</a></div>
         <div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> +55 68 99258-8542</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Star size={15}/> @dra.mariliasantana</a><span><MapPin size={15}/> Rua São Mateus, 81 • Alto Alegre</span></div>
       </div><div className="footer-bottom"><span>© {new Date().getFullYear()} Dra. Marília Santana. Todos os direitos reservados.</span><span>Harmonização Facial Full Face • Face Lift 3D</span></div></div></footer>
 
-      {selectedProcedure && <div className="procedure-detail-backdrop" role="presentation" onClick={() => setSelectedProcedure(null)}>
-        <section className="procedure-detail-panel" role="dialog" aria-modal="true" aria-labelledby="procedure-detail-title" onClick={(e) => e.stopPropagation()}>
-          <button className="procedure-detail-back" onClick={() => setSelectedProcedure(null)}>← Voltar aos procedimentos</button>
-          <div className="procedure-detail-layout">{selectedProcedure.image && <div className="procedure-detail-image"><img src={selectedProcedure.image} alt={selectedProcedure.title}/></div>}<div className="procedure-detail-copy"><span className="eyebrow">CONHEÇA O PROCEDIMENTO</span><h2 id="procedure-detail-title">{selectedProcedure.title}</h2><strong className="procedure-price">Sob avaliação</strong><p className="procedure-detail-intro">{selectedProcedure.text}</p><div className="procedure-detail-alert"><strong>Avaliação individual</strong><span>A indicação, as etapas, os cuidados e os resultados possíveis são definidos após avaliação profissional. Cada pessoa pode responder de maneira diferente.</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + selectedProcedure.title)}>Quero saber mais <MessageCircle size={18}/></button></div></div>
-        </section>
-      </div>}
       <a className="floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Dra. Marília Santana pelo WhatsApp"><img src={whatsappAsset.url} alt=""/></a>
     </main>
   );
