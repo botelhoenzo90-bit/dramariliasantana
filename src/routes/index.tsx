@@ -144,7 +144,7 @@ function Index() {
           <div className="procedure-window"><div className={"procedure-track" + (selectedProcedure ? " procedure-track-paused" : "")}>
             {[...procedures,...procedures].map(({title,text,image},i)=><article className="procedure-card has-image" key={title + i}>
               {image ? <img className="procedure-photo" src={image} alt={"Imagem ilustrativa de " + title} loading="lazy"/> : <div className="procedure-photo procedure-photo-empty" aria-hidden="true"/>}
-              <div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">Sob avaliação</strong><p>{text}</p><button className="procedure-book procedure-more" onClick={() => setSelectedProcedure(procedures[i % procedures.length])}>Saiba mais <ArrowRight size={15}/></button></div>
+              <div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">Sob avaliação</strong><p>{text}</p><button className="procedure-book procedure-more" onClick={() => setSelectedProcedure(procedures[i % procedures.length] ?? null)}>Saiba mais <ArrowRight size={15}/></button></div>
             </article>)}
           </div></div>
           <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("consultar os procedimentos e agendar uma avaliação") }><MessageCircle size={18}/> Consultar procedimentos</button></div>
