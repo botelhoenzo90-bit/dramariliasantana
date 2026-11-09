@@ -179,12 +179,17 @@ function Index() {
       <section className="section reviews-section marilia-reviews" id="avaliacoes">
         <div className="container">
           <div className="reviews-heading"><span className="eyebrow">AVALIAÇÕES</span><h2>O cuidado que começa com <em>confiança.</em></h2><p>Uma boa experiência é construída com escuta, transparência e atenção em cada etapa. Conheça os pilares que orientam o atendimento da Dra. Marília Santana.</p></div>
-          <div className="review-cards">
-            <article className="review-card"><div className="review-stars" aria-hidden="true">“</div><span className="review-label">ESCUTA E ACOLHIMENTO</span><p>Suas expectativas são ouvidas com atenção para que o plano de cuidado respeite sua história, seus traços e seus objetivos.</p><strong>Atendimento individualizado</strong></article>
-            <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><span className="review-label">PLANEJAMENTO PERSONALIZADO</span><p>Cada etapa é explicada com clareza, considerando as características do seu rosto e as possibilidades indicadas para você.</p><strong>Face Lift 3D</strong></article>
-            <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><span className="review-label">NATURALIDADE E EQUILÍBRIO</span><p>O propósito é valorizar sua beleza sem apagar sua identidade, com escolhas cuidadosas e alinhadas às suas necessidades.</p><strong>Beleza com naturalidade</strong></article>
+          <div className="review-marquee" aria-label="Exemplos fictícios de depoimentos">
+            <div className="review-marquee-track">
+              {[1,2].map((copy) => <div className="review-marquee-group" key={copy}>
+                <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><p>“Gostei muito da atenção desde a primeira conversa. A avaliação foi cuidadosa e entendi cada etapa do planejamento para valorizar meus traços sem perder minha naturalidade.”</p><div className="review-author"><strong>Ana Carolina</strong><span>Exemplo fictício</span></div></article>
+                <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><p>“O procedimento foi explicado com clareza e me senti segura durante todo o atendimento. O cuidado com os detalhes e as orientações fizeram diferença na experiência.”</p><div className="review-author"><strong>Mariana Oliveira</strong><span>Exemplo fictício</span></div></article>
+                <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><p>“Procurei informações sobre rejuvenescimento e recebi uma orientação muito atenciosa. Gostei da proposta personalizada e do respeito às características do meu rosto.”</p><div className="review-author"><strong>Camila Rodrigues</strong><span>Exemplo fictício</span></div></article>
+                <article className="review-card"><div className="review-stars" aria-label="Cinco estrelas">★★★★★</div><p>“A experiência foi acolhedora. Cada possibilidade foi conversada com calma e o plano considerou o que eu realmente buscava, sem exageros.”</p><div className="review-author"><strong>Juliana Martins</strong><span>Exemplo fictício</span></div></article>
+              </div>)}
+            </div>
           </div>
-          <p className="reviews-note">Os depoimentos de pacientes serão apresentados nesta área após serem recebidos e autorizados para publicação.</p>
+          <p className="reviews-note">Atenção: todos os depoimentos e nomes exibidos neste carrossel são fictícios, criados apenas como demonstração de layout. Não representam avaliações reais de pacientes.</p>
           <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação") }><MessageCircle size={18}/> Quero agendar</button></div>
         </div>
       </section>
