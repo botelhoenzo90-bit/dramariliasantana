@@ -818,3 +818,41 @@
 @media(max-width:760px){
   .marilia-site .review-marquee-track{animation-duration:30s}
 }
+
+
+/* Avatar padrão: silhueta frontal, perfeitamente centralizada */
+.marilia-site .review-avatar{
+  position:relative;
+  display:block;
+  flex:0 0 50px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#f1ede5;
+  border:1px solid #e2d8c6;
+  box-shadow:none;
+}
+.marilia-site .review-avatar:before{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  left:50%;
+  top:8px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:#b8ad9c;
+  box-shadow:none;
+}
+.marilia-site .review-avatar:after{
+  content:"";
+  position:absolute;
+  width:27px;
+  height:16px;
+  left:50%;
+  bottom:4px;
+  transform:translateX(-50%);
+  border-radius:15px 15px 8px 8px;
+  background:#b8ad9c;
+}
