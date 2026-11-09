@@ -771,3 +771,16 @@
   margin-right: auto !important;
   color: #e2b52f !important;
 }
+
+
+/* Ajustes do carrossel de avaliações da Dra. Marília */
+.marilia-site .review-card{align-items:stretch}
+.marilia-site .review-card .review-stars{display:flex;justify-content:center;align-items:center;width:100%;text-align:center;color:#d2a43e;letter-spacing:4px;font-size:21px;line-height:1;margin:0 0 20px}
+.marilia-site .review-author{display:flex;flex-direction:row;align-items:center;gap:11px;width:100%;margin-top:auto;padding-top:15px;border-top:1px solid #eee7db}
+.marilia-site .review-avatar{position:relative;display:block;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#eee9df;border:1px solid #e2d8c6;overflow:hidden}
+.marilia-site .review-avatar:before{content:"";position:absolute;width:13px;height:13px;left:14px;top:8px;border-radius:50%;background:#b7aa94}
+.marilia-site .review-avatar:after{content:"";position:absolute;width:25px;height:15px;left:8px;bottom:3px;border-radius:14px 14px 8px 8px;background:#b7aa94}
+.marilia-site .review-author-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.marilia-site .review-author-copy strong{font-family:Georgia,serif;font-size:16px;font-weight:400;color:#51432b}
+.marilia-site .review-author-copy span{font-size:9px;letter-spacing:.7px;text-transform:uppercase;color:#a17b3c}
+.marilia-site .review-marquee:hover .review-marquee-track{animation-play-state:running}
