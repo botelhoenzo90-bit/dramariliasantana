@@ -739,3 +739,23 @@
 .marilia-site .review-marquee:hover .review-marquee-track{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.marilia-site .review-marquee-track{animation:none;transform:none}.marilia-site .review-marquee-group:nth-child(2){display:none}}
 @media(max-width:760px){.marilia-site .review-card{flex-basis:min(82vw,320px);width:min(82vw,320px);min-height:310px;padding:24px 22px}.marilia-site .review-marquee-track{animation-duration:38s}}
+
+
+/* Refinamento final do carrossel de avaliações */
+.marilia-site .marilia-reviews{overflow:hidden}
+.marilia-site .marilia-reviews>.container{width:100%;max-width:none;padding-left:0;padding-right:0}
+.marilia-site .marilia-reviews .reviews-heading,
+.marilia-site .marilia-reviews .reviews-note,
+.marilia-site .marilia-reviews .section-action{width:min(100% - 36px,900px);margin-left:auto;margin-right:auto}
+.marilia-site .review-marquee{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;padding:8px 0 22px}
+.marilia-site .review-marquee-track{animation-name:marilia-review-loop;animation-timing-function:linear;animation-iteration-count:infinite}
+.marilia-site .review-card .review-stars{width:100%;text-align:center;color:#e2b52f!important;letter-spacing:5px;font-size:22px;margin:0 0 20px}
+.marilia-site .review-author{display:flex;flex-direction:row;align-items:center;gap:12px;border-top:1px solid #eee7db;padding-top:16px;width:100%}
+.marilia-site .review-avatar{display:block;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#f3f0e9;border:1px solid #e5dccb;position:relative}
+.marilia-site .review-avatar:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#d8d0c2;left:50%;top:8px;transform:translateX(-50%)}
+.marilia-site .review-avatar:after{content:"";position:absolute;width:23px;height:11px;border-radius:12px 12px 8px 8px;background:#d8d0c2;left:50%;bottom:6px;transform:translateX(-50%)}
+.marilia-site .review-author-copy{display:flex;flex-direction:column;gap:4px}
+.marilia-site .review-author-copy strong{font-family:Georgia,serif;font-size:17px;font-weight:400;color:#51432b}
+.marilia-site .review-author-copy>span{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#a17b3c}
+.marilia-site .review-marquee:hover .review-marquee-track{animation-play-state:running!important}
+@media(max-width:760px){.marilia-site .marilia-reviews>.container{padding:0}.marilia-site .review-marquee{margin-left:calc(50% - 50vw)}}
