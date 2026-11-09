@@ -1126,3 +1126,66 @@
   .marilia-site .footer-brand p{margin-inline:auto}
   .marilia-site .footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:8px}
 }
+
+
+/* Ajustes finais: depoimentos, apresentação da clínica e botões */
+.marilia-site .review-author{
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  text-align:center;
+  padding-top:18px;
+}
+.marilia-site .review-avatar{margin-inline:auto}
+.marilia-site .review-author-copy{align-items:center;text-align:center}
+.marilia-site .clinic-video-copy{max-width:520px}
+.marilia-site .clinic-video-copy>p{font-size:15px;line-height:1.85;margin:0 0 17px}
+.marilia-site .clinic-space-details{
+  display:grid;
+  gap:11px;
+  margin:24px 0 26px;
+  text-align:left;
+}
+.marilia-site .clinic-space-details span{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  padding:13px 15px;
+  border:1px solid rgba(185,154,85,.24);
+  border-radius:13px;
+  background:rgba(255,253,249,.72);
+  color:#625b50;
+  font-size:13px;
+  line-height:1.6;
+}
+.marilia-site .clinic-space-details span:before{
+  content:"✦";
+  flex:none;
+  color:var(--gold-dark);
+  font-size:15px;
+  line-height:1.4;
+}
+.marilia-site .btn{
+  min-height:56px;
+  padding:0 28px;
+  font-size:15px;
+  gap:11px;
+}
+.marilia-site .header-cta{
+  min-height:48px;
+  padding:13px 21px;
+  font-size:13px;
+}
+.marilia-site .faq-item button{
+  min-height:60px;
+  font-size:14px;
+}
+@media(max-width:900px){
+  .marilia-site .clinic-space-details{max-width:620px;margin:22px auto}
+}
+@media(max-width:600px){
+  .marilia-site .btn{min-height:54px;padding:0 20px;font-size:14px}
+  .marilia-site .clinic-space-details span{font-size:12px;padding:12px}
+  .marilia-site .faq-item button{min-height:56px}
+}
