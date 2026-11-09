@@ -12,4 +12,4 @@
 - [x] Inserir vídeo da clínica e remover o visual do método exclusivo
 - [x] Reunir Instagram com a seção sobre a Dra.
 - [x] Substituir fotos dos procedimentos e deixar flacidez sem foto
-- [ ] Conferir alterações na prévia em computador e celular
+- [x] Conferir alterações na prévia em computador e celular
