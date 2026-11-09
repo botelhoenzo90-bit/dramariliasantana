@@ -629,3 +629,96 @@
     flex-basis: 220px !important;
   }
 }
+
+
+/* Ajustes solicitados para a página da Dra. Marília */
+.marilia-site .hero-logo.marilia-logo {
+  width: min(175px, 48vw) !important;
+  margin: 0 auto 18px !important;
+}
+.marilia-site .hero-logo.marilia-logo img {
+  width: 100% !important;
+  max-height: 150px !important;
+  object-fit: contain !important;
+}
+.marilia-site .footer-marilia-logo {
+  display: block;
+  width: min(190px, 100%);
+  max-height: 120px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 16px;
+}
+.marilia-site .marilia-reviews {
+  background: #f8f3e9;
+  padding: 82px 0;
+}
+.marilia-site .marilia-reviews .reviews-heading {
+  width: min(100% - 36px, 790px);
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.marilia-site .marilia-reviews .reviews-heading h2 {
+  margin: 10px 0 12px;
+}
+.marilia-site .marilia-reviews .reviews-heading p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.marilia-site .review-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.marilia-site .review-card {
+  min-height: 260px;
+  padding: 28px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fffdf9;
+  border: 1px solid #e8dcc5;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(69, 54, 31, .06);
+}
+.marilia-site .review-stars {
+  color: #b08a43;
+  letter-spacing: 4px;
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+.marilia-site .review-label {
+  color: #96753b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+.marilia-site .review-card p {
+  margin: 14px 0 22px;
+  color: #665e52;
+  font-size: 14px;
+  line-height: 1.8;
+  flex: 1;
+}
+.marilia-site .review-card strong {
+  color: #51432b;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+.marilia-site .reviews-note {
+  max-width: 760px;
+  margin: 22px auto 0;
+  text-align: center;
+  color: #817765;
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  .marilia-site .review-cards { grid-template-columns: 1fr; }
+  .marilia-site .review-card { min-height: 0; }
+  .marilia-site .footer-marilia-logo { margin-inline: auto; object-position: center; }
+  .marilia-site .footer-brand { text-align: center; }
+}
