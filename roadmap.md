@@ -7,3 +7,9 @@
 - [x] Preparar a confirmação do Google e o mapa de páginas
 - [x] Publicar a confirmação e verificar o site no Google
 - [x] Enviar o mapa de páginas ao Google
+
+- [x] Aplicar logo e retrato da Dra. Marília
+- [x] Inserir vídeo da clínica e remover o visual do método exclusivo
+- [x] Reunir Instagram com a seção sobre a Dra.
+- [x] Substituir fotos dos procedimentos e deixar flacidez sem foto
+- [ ] Conferir alterações na prévia em computador e celular

@@ -1,7 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Check, ChevronDown, Heart, MapPin, MessageCircle, Navigation, Phone, Play, Sparkles, Star, Video, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Heart, MapPin, MessageCircle, Navigation, Phone, Instagram, Sparkles, Star, X } from "lucide-react";
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
+import logoAsset from "@/assets/marilia-santana-logo.png.asset.json";
+import portraitAsset from "@/assets/marilia-santana-retrato.png.asset.json";
+import clinicVideo from "@/assets/marilia-clinica.mp4.asset.json";
+import clinicPoster from "@/assets/marilia-clinica-capa.jpg.asset.json";
+import fullFaceAsset from "@/assets/marilia-full-face.png.asset.json";
+import rejuvenescimentoAsset from "@/assets/marilia-rejuvenescimento.png.asset.json";
+import botoxAsset from "@/assets/marilia-botox.png.asset.json";
+import preenchimentoAsset from "@/assets/marilia-preenchimento.png.asset.json";
+import bioestimuladorAsset from "@/assets/marilia-bioestimulador.png.asset.json";
+import fiosAsset from "@/assets/marilia-fios.png.asset.json";
+import peelingsAsset from "@/assets/marilia-peelings.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -11,6 +22,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Dra. Marília Santana | Face Lift 3D" },
       { property: "og:description", content: "Rejuvenescimento facial e harmonização Full Face com naturalidade, elegância e planejamento individual." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#a8843e" },
     ],
   }),
@@ -22,17 +34,16 @@ const INSTAGRAM = "https://www.instagram.com/dra.mariliasantana/";
 const ADDRESS = "Rua São Mateus, 81 — Alto Alegre";
 const MAP_QUERY = encodeURIComponent(ADDRESS);
 const MAP = "https://www.google.com/maps/search/?api=1&query=" + MAP_QUERY;
-const procedureImage = (filename: string) => "/procedimentos/" + encodeURIComponent(filename);
 
 const procedures = [
-  { title: "Harmonização Facial Full Face", text: "Planejamento global da face para valorizar proporções, contornos e equilíbrio, respeitando a identidade de cada paciente.", image: procedureImage("Tratamento Facial Luxuoso com Dermaplaning.png") },
-  { title: "Rejuvenescimento Facial", text: "Abordagem personalizada para cuidar dos sinais do envelhecimento e buscar uma aparência descansada e natural.", image: procedureImage("Limpeza facial profissional no spa.png") },
-  { title: "Toxina Botulínica (Botox)", text: "Tratamento de linhas de expressão com indicação, pontos de aplicação e planejamento definidos após avaliação.", image: procedureImage("Tratamento Facial com Microagulhamento.png") },
-  { title: "Preenchimento Facial e Labial", text: "Técnica utilizada para tratar pontos específicos, valorizar contornos e buscar harmonia de acordo com cada rosto.", image: procedureImage("Micropigmentação labial em close-up.png") },
-  { title: "Bioestimuladores de Colágeno", text: "Protocolos voltados ao estímulo de colágeno e à melhora gradual da firmeza, conforme avaliação individual.", image: procedureImage("Tratamento Facial com Peeling Químico.png") },
-  { title: "Fios de Colágeno", text: "Cuidado complementar dentro de um plano individualizado para trabalhar a qualidade e a aparência da pele.", image: procedureImage("Tratamento Facial Luxuoso com Dermaplaning.png") },
-  { title: "Peelings e Qualidade da Pele", text: "Tratamentos escolhidos conforme as características da pele e os objetivos de textura, viço e uniformidade.", image: procedureImage("Tratamento Facial com Peeling Químico.png") },
-  { title: "Tratamentos para Flacidez", text: "Estratégias personalizadas para cuidar da firmeza facial e dos sinais do envelhecimento.", image: procedureImage("Tratamento Facial com Microagulhamento.png") },
+  { title: "Harmonização Facial Full Face", text: "Planejamento global da face para valorizar proporções, contornos e equilíbrio, respeitando a identidade de cada paciente.", image: fullFaceAsset.url },
+  { title: "Rejuvenescimento Facial", text: "Abordagem personalizada para cuidar dos sinais do envelhecimento e buscar uma aparência descansada e natural.", image: rejuvenescimentoAsset.url },
+  { title: "Toxina Botulínica (Botox)", text: "Tratamento de linhas de expressão com indicação, pontos de aplicação e planejamento definidos após avaliação.", image: botoxAsset.url },
+  { title: "Preenchimento Facial e Labial", text: "Técnica utilizada para tratar pontos específicos, valorizar contornos e buscar harmonia de acordo com cada rosto.", image: preenchimentoAsset.url },
+  { title: "Bioestimuladores de Colágeno", text: "Protocolos voltados ao estímulo de colágeno e à melhora gradual da firmeza, conforme avaliação individual.", image: bioestimuladorAsset.url },
+  { title: "Fios de Colágeno", text: "Cuidado complementar dentro de um plano individualizado para trabalhar a qualidade e a aparência da pele.", image: fiosAsset.url },
+  { title: "Peelings e Qualidade da Pele", text: "Tratamentos escolhidos conforme as características da pele e os objetivos de textura, viço e uniformidade.", image: peelingsAsset.url },
+  { title: "Tratamentos para Flacidez", text: "Estratégias personalizadas para cuidar da firmeza facial e dos sinais do envelhecimento.", image: null },
 ];
 
 const faqs = [
@@ -54,7 +65,7 @@ function Index() {
       <section className="hero" id="inicio">
         <div className="container hero-grid">
           <div className="hero-copy center-hero">
-            <div className="hero-wordmark"><span>DRA.</span><strong>MARÍLIA SANTANA</strong><small>HARMONIZAÇÃO FACIAL • FULL FACE</small></div>
+            <div className="hero-logo marilia-logo"><img src={logoAsset.url} alt="Marília Santana — Harmonização Full Face" width={300} height={273}/></div>
             <span className="eyebrow">REJUVENESCIMENTO • HARMONIZAÇÃO FULL FACE</span>
             <h1>Realce sua beleza com <em>naturalidade, equilíbrio e elegância.</em></h1>
             <p className="hero-lead">Uma abordagem personalizada de rejuvenescimento facial para mulheres que desejam cuidar de si, valorizar seus traços e preservar aquilo que torna cada rosto único.</p>
@@ -85,13 +96,14 @@ function Index() {
 
       <section className="section intro-section" id="marilia">
         <div className="container intro-grid">
-          <div className="intro-photo marilia-photo-placeholder"><div className="portrait-monogram">MS</div><span>Foto profissional da Dra. Marília</span></div>
+          <div className="intro-photo marilia-portrait"><img src={portraitAsset.url} alt="Dra. Marília Santana" loading="lazy" width={768} height={1051}/></div>
           <div className="intro-copy">
             <span className="eyebrow">SOBRE A DRA. MARÍLIA SANTANA</span>
             <h2>Rejuvenescimento que respeita a sua <em>identidade.</em></h2>
             <p>O trabalho da Dra. Marília Santana é dedicado à harmonização facial Full Face e ao rejuvenescimento, com foco em resultados naturais, elegantes e alinhados à individualidade de cada paciente.</p>
             <p>Mais do que olhar para uma característica isolada, a proposta é compreender o rosto como um conjunto. A partir de uma avaliação cuidadosa, são definidos os caminhos e os procedimentos que fazem sentido para cada caso.</p>
             <button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação com a Dra. Marília") }><MessageCircle size={18}/> Agendar minha avaliação</button>
+            <div className="marilia-instagram" id="instagram"><p>Acompanhe conteúdos, procedimentos e novidades da clínica no Instagram.</p><a className="btn btn-outline" href={INSTAGRAM} target="_blank" rel="noreferrer"><Instagram size={18}/> @dra.mariliasantana <ArrowRight size={18}/></a></div>
           </div>
         </div>
       </section>
@@ -117,10 +129,6 @@ function Index() {
             <h2>Face Lift 3D: uma visão completa do <em>rejuvenescimento facial.</em></h2>
             <p>Um método próprio que organiza o cuidado facial em três dimensões complementares. A partir de uma avaliação individual, a Dra. Marília desenvolve um protocolo personalizado, considerando as necessidades e os objetivos de cada paciente.</p>
           </div>
-          <div className="face-lift-visual">
-            <div className="face-lift-orbit"><span>FACE</span><strong>LIFT</strong><small>3D</small></div>
-            <div className="face-lift-caption">PLANEJAMENTO FACIAL INTEGRADO</div>
-          </div>
           <div className="camouflage-feature-bottom">
             <div><span className="camouflage-feature-icon"><Sparkles size={20}/></span><strong>01. Reestruturação facial</strong><p>Olhar global para proporções, contornos e pontos de suporte, respeitando a anatomia e a identidade do rosto.</p></div>
             <div><span className="camouflage-feature-icon"><Heart size={20}/></span><strong>02. Estímulo de colágeno e firmeza</strong><p>Estratégias individualizadas para estimular colágeno e cuidar da firmeza e sustentação da pele.</p></div>
@@ -135,7 +143,7 @@ function Index() {
           <div className="section-heading center"><span className="eyebrow">PROCEDIMENTOS</span><h2>Cuidado facial em cada detalhe, com <em>planejamento.</em></h2><p>Conheça as principais possibilidades de tratamento. A indicação e a combinação de técnicas dependem sempre de avaliação individual.</p></div>
           <div className="procedure-window"><div className={"procedure-track" + (selectedProcedure ? " procedure-track-paused" : "")}>
             {[...procedures,...procedures].map(({title,text,image},i)=><article className="procedure-card has-image" key={title + i}>
-              <img className="procedure-photo" src={image} alt={"Imagem ilustrativa de " + title} loading="lazy"/>
+              {image ? <img className="procedure-photo" src={image} alt={"Imagem ilustrativa de " + title} loading="lazy"/> : <div className="procedure-photo procedure-photo-empty" aria-hidden="true"/>}
               <div className="procedure-content"><div className="procedure-icon"><Sparkles size={21}/></div><span className="procedure-number">{String((i%procedures.length)+1).padStart(2,"0")}</span><h3>{title}</h3><strong className="procedure-price">Sob avaliação</strong><p>{text}</p><button className="procedure-book procedure-more" onClick={() => setSelectedProcedure(procedures[i % procedures.length])}>Saiba mais <ArrowRight size={15}/></button></div>
             </article>)}
           </div></div>
@@ -158,8 +166,8 @@ function Index() {
 
       <section className="section clinic-video-section" id="video-clinica">
         <div className="container clinic-video-grid">
-          <div className="clinic-video-copy"><span className="eyebrow">CONHEÇA NOSSO ESPAÇO</span><h2>Um ambiente preparado para receber <em>você.</em></h2><p>Em breve, você poderá conhecer a clínica em um vídeo de apresentação, com detalhes do ambiente e da experiência de atendimento.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer a clínica e agendar uma visita") }><MessageCircle size={18}/> Quero conhecer a clínica</button></div>
-          <div className="clinic-video-placeholder" aria-label="Espaço reservado para o vídeo de apresentação da clínica"><div className="clinic-video-frame"><span className="clinic-video-icon"><Play size={32} fill="currentColor"/></span><Video size={28}/><strong>Vídeo de apresentação da clínica</strong><small>O vídeo será inserido aqui</small></div></div>
+          <div className="clinic-video-copy"><span className="eyebrow">CONHEÇA NOSSO ESPAÇO</span><h2>Um ambiente preparado para receber <em>você.</em></h2><p>Conheça a clínica e os detalhes do ambiente preparado para acolher você em cada etapa do atendimento.</p><button className="btn btn-primary" onClick={() => goWhatsapp("conhecer a clínica e agendar uma visita") }><MessageCircle size={18}/> Quero conhecer a clínica</button></div>
+          <div className="marilia-clinic-video"><video controls playsInline preload="metadata" poster={clinicPoster.url} aria-label="Vídeo de apresentação da clínica da Dra. Marília Santana"><source src={clinicVideo.url} type="video/mp4"/></video></div>
         </div>
       </section>
 
@@ -167,10 +175,6 @@ function Index() {
         <div className="reviews-heading"><span className="eyebrow">ATENDIMENTO INDIVIDUALIZADO</span><h2>Uma experiência construída com <em>cuidado.</em></h2><p>Cada paciente chega com uma história, características e expectativas próprias. A avaliação é o momento de escutar, orientar e construir um plano com clareza.</p></div>
         <div className="experience-pillars"><article><Heart/><strong>Escuta atenta</strong><span>Entender suas expectativas e prioridades.</span></article><article><Sparkles/><strong>Plano personalizado</strong><span>Considerar as particularidades do seu rosto.</span></article><article><Check/><strong>Orientação clara</strong><span>Conversar sobre etapas, cuidados e possibilidades.</span></article></div>
         <div className="section-action center"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar uma avaliação") }><MessageCircle size={18}/> Quero agendar</button></div>
-      </section>
-
-      <section className="section highlight-section" id="instagram">
-        <div className="container narrow center"><span className="eyebrow">ACOMPANHE NO INSTAGRAM</span><h2>Mais sobre o trabalho da Dra. Marília no <em>Instagram.</em></h2><p>Acompanhe conteúdos, informações sobre procedimentos e novidades da clínica.</p><a className="btn btn-outline" href={INSTAGRAM} target="_blank" rel="noreferrer"> <span> @dra.mariliasantana </span><ArrowRight size={18}/></a></div>
       </section>
 
       <section className="section faq-section" id="faq">
@@ -202,7 +206,7 @@ function Index() {
       {selectedProcedure && <div className="procedure-detail-backdrop" role="presentation" onClick={() => setSelectedProcedure(null)}>
         <section className="procedure-detail-panel" role="dialog" aria-modal="true" aria-labelledby="procedure-detail-title" onClick={(e) => e.stopPropagation()}>
           <button className="procedure-detail-back" onClick={() => setSelectedProcedure(null)}>← Voltar aos procedimentos</button>
-          <div className="procedure-detail-layout"><div className="procedure-detail-image"><img src={selectedProcedure.image} alt={selectedProcedure.title}/></div><div className="procedure-detail-copy"><span className="eyebrow">CONHEÇA O PROCEDIMENTO</span><h2 id="procedure-detail-title">{selectedProcedure.title}</h2><strong className="procedure-price">Sob avaliação</strong><p className="procedure-detail-intro">{selectedProcedure.text}</p><div className="procedure-detail-alert"><strong>Avaliação individual</strong><span>A indicação, as etapas, os cuidados e os resultados possíveis são definidos após avaliação profissional. Cada pessoa pode responder de maneira diferente.</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + selectedProcedure.title)}>Quero saber mais <MessageCircle size={18}/></button></div></div>
+          <div className="procedure-detail-layout">{selectedProcedure.image && <div className="procedure-detail-image"><img src={selectedProcedure.image} alt={selectedProcedure.title}/></div>}<div className="procedure-detail-copy"><span className="eyebrow">CONHEÇA O PROCEDIMENTO</span><h2 id="procedure-detail-title">{selectedProcedure.title}</h2><strong className="procedure-price">Sob avaliação</strong><p className="procedure-detail-intro">{selectedProcedure.text}</p><div className="procedure-detail-alert"><strong>Avaliação individual</strong><span>A indicação, as etapas, os cuidados e os resultados possíveis são definidos após avaliação profissional. Cada pessoa pode responder de maneira diferente.</span></div><button className="btn btn-primary" onClick={() => goWhatsapp("saber mais sobre " + selectedProcedure.title)}>Quero saber mais <MessageCircle size={18}/></button></div></div>
         </section>
       </div>}
       <a className="floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Dra. Marília Santana pelo WhatsApp"><img src={whatsappAsset.url} alt=""/></a>
