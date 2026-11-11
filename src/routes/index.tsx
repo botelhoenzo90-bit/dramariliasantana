@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "https://wa.me/5568992588542";
 const INSTAGRAM = "https://www.instagram.com/dra.mariliasantana/";
-const ADDRESS = "Rua São Mateus, 81 — Alto Alegre";
+const ADDRESS = "Rua São Mateus, 81 — Isaura Parente";
 const MAP_QUERY = encodeURIComponent(ADDRESS);
 const MAP = "https://www.google.com/maps/search/?api=1&query=" + MAP_QUERY;
 
@@ -204,7 +204,7 @@ function Index() {
         <div className="container location-grid">
           <div className="map-card"><iframe title="Localização da clínica da Dra. Marília Santana" src={"https://www.google.com/maps?q=" + MAP_QUERY + "&output=embed"} loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div>
           <div className="location-copy"><span className="eyebrow">LOCALIZAÇÃO</span><h2>Será um prazer receber <em>você.</em></h2>
-            <div className="address"><MapPin size={23}/><div><strong>Rua São Mateus, 81</strong><span>Alto Alegre</span><small>Atendimento mediante agendamento</small></div></div>
+            <div className="address"><MapPin size={23}/><div><strong>Rua São Mateus, 81</strong><span>Isaura Parente</span><small>Atendimento mediante agendamento</small></div></div>
             <div className="location-info"><div><Phone size={19}/><span><strong>WhatsApp</strong>+55 68 99258-8542</span></div><div><Clock3Fallback/><span><strong>Atendimento</strong>Com horário agendado</span></div></div>
             <div className="location-actions"><button className="btn btn-primary" onClick={() => goWhatsapp("agendar minha avaliação") }><MessageCircle size={18}/> Agendar pelo WhatsApp</button><a className="btn btn-outline" href={MAP} target="_blank" rel="noreferrer"><Navigation size={17}/> Ver no mapa</a></div>
           </div>
@@ -216,7 +216,7 @@ function Index() {
       <footer className="footer"><div className="container"><div className="footer-grid">
         <div className="footer-brand"><img className="footer-marilia-logo" src={logoAsset.url} alt="Dra. Marília Santana — Harmonização Facial Full Face" loading="lazy"/><p>Rejuvenescimento facial com naturalidade, elegância e atenção à individualidade de cada paciente.</p></div>
         <div><h4>Navegação</h4><a href="#inicio">Início</a><a href="#face-lift-3d">Face Lift 3D</a><a href="#procedimentos">Procedimentos</a><a href="#video-clinica">Conheça a clínica</a></div>
-        <div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> +55 68 99258-8542</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Star size={15}/> @dra.mariliasantana</a><span><MapPin size={15}/> Rua São Mateus, 81 • Alto Alegre</span></div>
+        <div><h4>Contato</h4><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle size={15}/> +55 68 99258-8542</a><a href={INSTAGRAM} target="_blank" rel="noreferrer"><Star size={15}/> @dra.mariliasantana</a><span><MapPin size={15}/> Rua São Mateus, 81 • Isaura Parente</span></div>
       </div><div className="footer-bottom"><span>© {new Date().getFullYear()} Dra. Marília Santana. Todos os direitos reservados.</span><span>Harmonização Facial Full Face • Face Lift 3D</span></div></div></footer>
 
       <a className="floating-wa" href={WHATSAPP} target="_blank" rel="noreferrer" aria-label="Falar com a Dra. Marília Santana pelo WhatsApp"><img src={whatsappAsset.url} alt=""/></a>
