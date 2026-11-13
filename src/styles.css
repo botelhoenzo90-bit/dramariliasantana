@@ -1189,3 +1189,14 @@
   .marilia-site .clinic-space-details span{font-size:12px;padding:12px}
   .marilia-site .faq-item button{min-height:56px}
 }
+
+/* Celular: vídeo entre o título e a descrição da clínica */
+@media(max-width:900px){
+  .marilia-site .clinic-video-copy{display:contents}
+  .marilia-site .clinic-video-grid{grid-template-columns:1fr;grid-template-areas:"head" "video" "body"}
+  .marilia-site .clinic-video-head{grid-area:head;text-align:center;max-width:650px;margin-inline:auto}
+  .marilia-site .clinic-video-body{grid-area:body;text-align:center;max-width:650px;margin-inline:auto}
+  .marilia-site .marilia-clinic-video{grid-area:video}
+  .marilia-site .clinic-video-head .eyebrow{justify-content:center}
+  .marilia-site .clinic-video-body>p{font-size:15px;line-height:1.85;margin:0 0 17px}
+}
