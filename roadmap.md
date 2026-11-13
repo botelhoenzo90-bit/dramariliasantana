@@ -13,3 +13,4 @@
 - [x] Reunir Instagram com a seção sobre a Dra.
 - [x] Substituir fotos dos procedimentos e deixar flacidez sem foto
 - [x] Conferir alterações na prévia em computador e celular
+- [x] Trocar o vídeo da seção "Conheça nosso espaço" pelo novo anexado
