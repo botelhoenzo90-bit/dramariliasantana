@@ -14,3 +14,4 @@
 - [x] Substituir fotos dos procedimentos e deixar flacidez sem foto
 - [x] Conferir alterações na prévia em computador e celular
 - [x] Trocar o vídeo da seção "Conheça nosso espaço" pelo novo anexado
+- [x] No celular, colocar o vídeo entre o título e a descrição da clínica
