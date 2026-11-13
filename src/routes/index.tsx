@@ -4,8 +4,8 @@ import { ArrowRight, Check, ChevronDown, Heart, MapPin, MessageCircle, Navigatio
 import whatsappAsset from "@/assets/whatsapp.png.asset.json";
 import logoAsset from "@/assets/marilia-santana-logo.png.asset.json";
 import portraitAsset from "@/assets/marilia-santana-retrato.png.asset.json";
-import clinicVideo from "@/assets/marilia-clinica.mp4.asset.json";
-import clinicPoster from "@/assets/marilia-clinica-capa.jpg.asset.json";
+import clinicVideo from "@/assets/marilia-clinica-2026.mp4.asset.json";
+import clinicPoster from "@/assets/marilia-clinica-capa-2026.jpg.asset.json";
 import fullFaceAsset from "@/assets/marilia-full-face.png.asset.json";
 import rejuvenescimentoAsset from "@/assets/marilia-rejuvenescimento-final.png.asset.json";
 import botoxAsset from "@/assets/marilia-botox-final.png.asset.json";
